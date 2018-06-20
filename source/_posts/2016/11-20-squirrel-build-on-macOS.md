@@ -102,6 +102,9 @@ cd plum && \
 
 [自用 *Squirrel* 配置 rime_cus](https://github.com/yakirChen/macOS-libs/tree/master/rime/rime_cus)
 
+### 7. 快捷键
+`ctrl-.`可以切换**全\半角**标点符号
+
 ###### change-log
 
 + **从2016/11/20. 试用到2017/1/3. 感觉良好.**
