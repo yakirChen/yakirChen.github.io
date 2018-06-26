@@ -58,7 +58,7 @@ rustup completions zsh > /Users/yakir/.oh-my-zsh/custom/plugins/rustup/_rustup
 
 #### rustup 基础使用
 
-[:see_no_evil: 详见官方](https://github.com/rust-lang-nursery/rustup.rs)
+[🙈 详见官方](https://github.com/rust-lang-nursery/rustup.rs)
 
 - 安装不同通道的`Rust`
 ```bash
@@ -87,10 +87,11 @@ cargo +nightly --version
 rustup component add rust-src --toolchain nightly
 rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
+rustup component add rustfmt-preview
 ```
 
 #### alias
-为了偷懒 :alien:
+为了偷懒👽
 ```bash
 alias rnr="rustup run nightly"
 alias rsr="rustup run stable"
@@ -103,7 +104,7 @@ alias ru="rustup update"
 ```rust
 // hello.rs
 fn main() {
-	println!("hello");
+    println!("hello");
 }
 ```
 
@@ -126,10 +127,12 @@ cargo run
 #Hello, world!
 ```
 
-#### Racer 安装
+#### 组件安装
 - 安装方式一
 ```bash
-cargo install racer
+cargo install --force racer
+cargo install --force clippy
+cargo install --force rustfmt-nightly
 ```
 
 - 安装方式二(源码安装)
@@ -158,7 +161,7 @@ racer complete std::io::B
 
 #### 其他扩展安装
 ```bash
-rustup run stable cargo install mdbook cargo-src
+cargo install mdbook cargo-src
 ```
 
 ### 编辑器支持
