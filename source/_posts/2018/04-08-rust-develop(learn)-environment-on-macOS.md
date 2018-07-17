@@ -132,7 +132,6 @@ cargo run
 ```bash
 cargo install --force racer
 cargo install --force clippy
-cargo install --force rustfmt-nightly
 ```
 
 - 安装方式二(源码安装)

@@ -83,8 +83,9 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - links
 
 links:
-  - title: joyo's world
-    url: http://www.iforfee.com
+  - title: World of Anti Zhou
+    url: http://www.antizhou.com 
+    #url: http://www.iforfee.com
 
 timeline:
   - num: 1

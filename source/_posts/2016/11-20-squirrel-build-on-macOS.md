@@ -23,7 +23,7 @@ description: Squirrel构建安装(macOS)
 ### 1. 获得`鼠鬚管`源码:
 
 ```bash
-git clone --recursive git@github.com:rime/squirrel.git
+git clone --recursive --depth 1 git@github.com:rime/squirrel.git
 ```
 
 ~~2. 使用`brew`安装编译时依赖~~
