@@ -20,12 +20,12 @@ description: Junit 5 Quick Start
 ```xml
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>9</maven.compiler.source>
-    <maven.compiler.target>9</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
 
     <!-- junit -->
-    <org.junit5.platform.version>1.0.3</org.junit5.platform.version>
-    <org.junit5.jupiter.version>5.0.3</org.junit5.jupiter.version>
+    <org.junit5.platform.version>1.2.0</org.junit5.platform.version>
+    <org.junit5.jupiter.version>5.2.0</org.junit5.jupiter.version>
 </properties>
 
 <dependency>
@@ -56,13 +56,13 @@ allprojects {
     apply plugin: "maven"
     apply plugin: "idea"
     
-    sourceCompatibility = 9
-    targetCompatibility = 9
+    sourceCompatibility = 11
+    targetCompatibility = 11
 }
 ext {
     /* test */
-    junit5_platform_version = "1.0.0-RC3"
-    junit5_jupiter_version = "5.0.0-RC3"
+    junit5_platform_version = "1.2.0"
+    junit5_jupiter_version = "5.2.0"
 }
 
 testCompile(
@@ -240,7 +240,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.junit.platform:junit-platform-gradle-plugin:1.0.3"
+        classpath "org.junit.platform:junit-platform-gradle-plugin:1.2.0"
     }
 }
 

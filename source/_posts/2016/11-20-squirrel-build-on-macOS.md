@@ -26,7 +26,7 @@ description: Squirrel构建安装(macOS)
 git clone --recursive --depth 1 git@github.com:rime/squirrel.git
 ```
 
-~~2. 使用`brew`安装编译时依赖~~
+~~2. 使用brew安装编译时依赖~~
 
 ~~brew install cmake boost~~
 
@@ -51,25 +51,25 @@ xcode-select --install
 git clone --recursive git@github.com:Kitware/CMake.git CMake
 cd CMake
 mkdir build && cd build 
-../bootstrap --prefix=${CMAKE_HOME}
+../bootstrap --parallel=4 --prefix=${CMAKE_HOME}
 make -j4
 make install
 
 # 验证
 cmake --version
+
 # 输出: 
-# cmake version 3.11.20180416-gccd1
-# 
+# cmake version 3.12.20180825-g0b26a
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-#### boost构建: 更新至`1.67`版本
+#### boost构建: 更新至`1.68`版本
 
 ```bash
-./bootstrap.sh --prefix=${LOCAL_DIR} --with-libraries=all
-./b2
+./bootstrap.sh --prefix=${LOCAL} --with-libraries=all
+./b2 -j4
 # 默认安装在/usr/local目录下 
-./b2 --prefix=${LOCAL} install
+./b2 -j4 --prefix=${LOCAL} install
 # 引入环境变量 
 export BOOST_ROOT=${LOCAL}
 ```
@@ -100,7 +100,7 @@ cd plum && \
 
 ### 6. 自用配置
 
-[自用 *Squirrel* 配置 rime_cus](https://github.com/yakirChen/macOS-libs/tree/master/rime/rime_cus)
+[自用 *Squirrel* 配置 rime_custom](https://github.com/yakirChen/macOS-libs/tree/master/rime/rime_custom)
 
 ### 7. 快捷键
 `ctrl-.`可以切换**全\半角**标点符号
@@ -114,6 +114,7 @@ cd plum && \
 + **更新2017/6/5. 更新预览图**
 + **更新2017/9/25. 更新boost 1.65.1**(更新前记得清理原有版本)
 + **更新2018/4/17. 引入`東風破`配置工具, 更新boost 1.67**
++ **更新2018/8/25. cmake & boost 並行化加速編譯, 更新boost 1.68**
 
 ---
 
