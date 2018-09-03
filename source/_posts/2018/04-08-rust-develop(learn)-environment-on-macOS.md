@@ -8,12 +8,10 @@ description: Rust Develop(Learn) Environment (macOS)
 ---
 
 ## 两种安装方式
-1. 传统方式安装
-2. `rustup`方式安装
+~~传统方式安装~~
+`rustup`方式安装(多版本管理 stable / beta / nightly)
 
 ## Ready
-- 安装 `Rust` 的方式使用了解包归档压缩包, [点击下载: rust 1.25.0](https://static.rust-lang.org/dist/rust-1.25.0-x86_64-apple-darwin.tar.gz)
-- `Rust` 源码包 [rustc-1.25.0-src.tar.gz](https://static.rust-lang.org/dist/rustc-1.25.0-src.tar.gz) _配置编辑器时用_
 - 代码提示工具 [`racer-rust/racer`](https://github.com/racer-rust/racer)
 - **rustup**工具安装脚本 [`rustup.sh`](https://rustup.rs)
 - **rustup**工具 [`rustup.rs`](https://github.com/rust-lang-nursery/rustup.rs)
@@ -29,19 +27,7 @@ export CARGO_HOME=${VOLUMES_SD}/repos/cargo # cargo 本地包仓库目录
 export PATH=$RUST_HOME/bin:$CARGO_HOME/bin:$PATH
 ```
 
-### 传统方式安装Rust
-```bash
-# 解压Rust安装
-tar zxvf rust-xxx-tar.gz -C ~/servers/rust
-# 解压Rust源码包 提取其中的src文件放到 `~/servers/rust` 目录下
-tar zxvf rustc-xxx-src.tar.gz
-# 我这本地把源码目录放在了其他目录中, 建立了软链
-ln -s /Volumes/sd/servers/rust_src/src ${RUST_HOME}/src 
-```
-
-### **Rustup**方式安装Rust
-
-#### 安装**rustup**
+### 安装**rustup**
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- \
     --no-modify-path \
@@ -56,7 +42,7 @@ rustup completions zsh > /Users/yakir/.oh-my-zsh/custom/plugins/rustup/_rustup
 # 在 ~/.zshrc 的plugins列表中添加 `rustup`
 ```
 
-#### rustup 基础使用
+### rustup 基础使用
 
 [🙈 详见官方](https://github.com/rust-lang-nursery/rustup.rs)
 
@@ -82,12 +68,18 @@ cargo +beta --version
 cargo +nightly --version
 ```
 
-#### 通过rustup安装组件
+### 通过rustup安装组件
 ```bash
 rustup component add rust-src --toolchain nightly
 rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
-rustup component add rustfmt-preview
+rustup component add rustfmt-preview --toolchain nightly
+rustup component add clippy-preview --toolchain=nightly
+```
+
+```bash
+# 运行clippy
+cargo run --bin cargo-clippy --manifest-path=path_to_clippys_Cargo.toml
 ```
 
 #### alias
@@ -100,7 +92,7 @@ alias rsu="rustup self update"
 alias ru="rustup update" 
 ```
 
-#### 测试 Rust 可用
+### 测试 Rust 可用
 ```rust
 // hello.rs
 fn main() {
@@ -115,7 +107,7 @@ rustc hello.rs
 # hello
 ```
 
-#### 测试 Cargo 可用
+### 测试 Cargo 可用
 ```bash
 cargo init --bin honey
 #      Created binary (application) project
@@ -127,11 +119,10 @@ cargo run
 #Hello, world!
 ```
 
-#### 组件安装
+### 组件安装
 - 安装方式一
 ```bash
-cargo install --force racer
-cargo install --force clippy
+cargo install --force racer mdbook cargo-src
 ```
 
 - 安装方式二(源码安装)
@@ -152,15 +143,10 @@ cd racer; cargo build # 编译之后二进制包在 ./target/debug/racer
 racer complete std::io::B
 
 # 输出类似信息
-# MATCH BufRead,1363,10,/Users/yakir/Developer/server/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
-# MATCH Bytes,1984,11,/Users/yakir/Developer/server/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes<R>
-# MATCH BufReader,50,11,/Users/yakir/Developer/server/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader<R>
-# MATCH BufWriter,378,11,/Users/yakir/Developer/server/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter<W: Write>
-```
-
-#### 其他扩展安装
-```bash
-cargo install mdbook cargo-src
+# MATCH BufRead,1332,10,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
+# MATCH Bytes,1958,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes<R>
+# MATCH BufReader,56,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader<R>
+# MATCH BufWriter,393,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter<W: Write>
 ```
 
 ### 编辑器支持
@@ -185,4 +171,3 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
 
 Reference:  
 [rustup.rs: https://github.com/rust-lang-nursery/rustup.rs](https://github.com/rust-lang-nursery/rustup.rs)
-

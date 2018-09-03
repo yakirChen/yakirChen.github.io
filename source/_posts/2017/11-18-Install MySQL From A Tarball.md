@@ -11,10 +11,10 @@ description: Install MySQL From A Tarball
 
 ### 安装前环境变量配置
 ```bash
-export MYSQL_BASE_DIR="/Volumes/Toshiba/Developer/mysql"
-export MYSQL_DATA_DIR="/Volumes/Toshiba/Developer/data/mysql"
-export MYSQL_LOGS_DIR="/Volumes/Toshiba/Developer/data/logs/mysql"
-# 初始化的过程中不要在MySQL的Data目录中放任何内容
+export MYSQL_BASE_DIR=${HOME}/local/mysql
+export MYSQL_DATA_DIR=/Volumes/Toshiba/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/Toshiba/mysql/logs
+# 初始化的过程中不要在MySQL的`data`目录中放任何内容
 ```
 
 ### 初始化
@@ -32,7 +32,6 @@ mysqld --initialize \
 ### 获取初始登录密码
 ```bash
 cat ${MYSQL_LOGS_DIR}/error.log
-# 3.W?Y5rksVfp
 ```
 
 ### 启动服务
