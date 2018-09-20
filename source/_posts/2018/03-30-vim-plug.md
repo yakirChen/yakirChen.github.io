@@ -1,10 +1,10 @@
 ---
 title: Vim Plug 插件管理
 date: 2018/03/30
-tags: [Vim]
+tags: [vim]
 categories: [Tech]
 toc: true
-description: Vim Plug 插件管理
+description: vim Plug 插件管理
 ---
 
 ##  获取NVim安装包

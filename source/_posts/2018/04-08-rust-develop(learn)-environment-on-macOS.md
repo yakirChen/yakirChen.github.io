@@ -151,20 +151,33 @@ racer complete std::io::B
 
 ### 编辑器支持
 
+
+#### vim 整合
+
+
+
 #### Sublime Text 整合
 
-Sublime Text 3 [插件](https://packagecontrol.io/installation)安装, `ctrl + ~`启动控制台输入  
+Sublime Text 3 [Package Control](https://packagecontrol.io/installation)安装, `ctrl + ~`启动控制台输入  
 ```bash
 import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 
-`command + shift + p` 输入 **Install Package** 安装  
-1. 组合一
-  - [RustAutoComplete](https://github.com/defuz/RustAutoComplete)
-  - [anaconda_rust](https://github.com/DamnWidget/anaconda_rust)
+1. 使用 **Package Control** 安装 [Rust Enhanced](https://github.com/rust-lang/rust-enhanced)
+` + Shift + P` 输入 **Install Package** 安装  
 
-2. 组合二
-  - [Rust Enhanced](https://github.com/rust-lang/rust-enhanced)
+2. [Language Server Protocol](https://github.com/tomv564/LSP)
+clone 代码到 sublime Packages 目录中 `${HOME}/Library/Application Support/Sublime Text 3/Packages`
+` + Shift + P` 输入 **Satisfy Dependencies** 安装  
+_控制台输出 "Package Control: All dependencies have been satisfied"_
+LSP文档 [LSP.readthedocs.io](https://lsp.readthedocs.io/), [docs](https://github.com/tomv564/LSP/blob/master/docs/index.md)
+
+
+~~1. 组合一~~
+  ~~- [RustAutoComplete](https://github.com/defuz/RustAutoComplete)~~
+  ~~- [anaconda_rust](https://github.com/DamnWidget/anaconda_rust)~~
+
+~~2. 组合二~~
 
 
 ---

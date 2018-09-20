@@ -50,16 +50,20 @@ mysqld --user=yakir \
 	--port=3306 &
 ```
 
+### 安全配置向导(optional)
+./mysql_secure_installation --socket=${MYSQL_DATA_DIR}/mysql.sock
+
 ### 登录MySQL进行用户初始化
 ```bash
 mysql -uroot -p --socket=${MYSQL_DATA_DIR}/mysql.sock
 # 输入之前从日志中获取的初始密码
 
 # 修改root默认密码
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'qweasd';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'qweasd';
 
 # 创建用户
-CREATE USER yakir IDENTIFIED BY 'qweasd';
+CREATE USER yakir IDENTIFIED WITH mysql_native_password BY 'qweasd';
+# ALTER USER yakir IDENTIFIED WITH mysql_native_password BY 'qweasd';
 
 # 删除用户
 # DROP USER 'canal'@'%';
