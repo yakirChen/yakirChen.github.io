@@ -1,5 +1,5 @@
 ---
-title: Rust Develop(Learn) Environment (macOS)
+title: Rust Develop(Learn) Environment (macOS/windows)
 date: 2018/04/08
 tags: [Rust, Cargo, Racer]
 categories: [Tech]
@@ -34,6 +34,10 @@ curl https://sh.rustup.rs -sSf | sh -s -- \
     --default-toolchain nightly \
     -y
 ```
+```powershell
+rustup-init.exe --no-modify-path --default-toolchain nightly  -y
+```
+
 [输出提示信息](https://gist.github.com/yakirChen/b36bed33ec1a5e34b27c7144511cbb5a)
 `Cargo`的安装目录在预先设置的环境变量中已经配置完成  
 添加`oh-my-zsh`插件  
