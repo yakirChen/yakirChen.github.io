@@ -30,74 +30,45 @@ description: GnuPG Install And Share Public-Key
 
 ## 构建安装 
 ```bash
-# libgpg-error
-./configure --prefix=${LOCAL} \
-    --disable-dependency-tracking \
-    --disable-silent-rules \
-    --enable-static && \
-    make -j4 && \
-    make install
-# libgcrypt
-./configure --disable-dependency-tracking \
-    --disable-silent-rules \
-    --enable-static \
-    --prefix=${LOCAL} \
-    --disable-asm \
-    --disable-jent-support && \
-    make -j4 && \
-    make install
-# libksba
-./configure --disable-dependency-tracking \
-    --disable-silent-rules \
-    --prefix=${LOCAL} && \
-    make -j4 && \
-    make install
-# libassuan
-./configure --disable-dependency-tracking \
-    --disable-silent-rules \
-    --prefix=${LOCAL} \
-    --enable-static && \
-    make -j4 && \
-    make install
-# npth
-./configure --disable-dependency-tracking \
-    --disable-silent-rules \
-    --prefix=${LOCAL} && \
-    make -j4 && \
-    make install
-# pinentry
-./configure --disable-dependency-tracking \
-    --disable-silent-rules \
-    --prefix=${LOCAL}/pinentry \
-    --disable-pinentry-qt \
-    --disable-pinentry-qt5 \
-    --disable-pinentry-gnome3 \
-    --disable-pinentry-tqt \
-    --disable-pinentry-fltk \
-    --enable-pinentry-tty \
-    --disable-pinentry-gtk2 && \
-    make -j4 && \
-    make install
-# ntbtls
-./configure --disable-dependency-tracking \
-    --enable-maintainer-mode \
-    --disable-silent-rules \
-    --prefix=${LOCAL} \
-    --disable-heartbeat-support && \
-    make -j4 && \
-    make install
-# gnupg
-./configure --disable-dependency-tracking \
-      --disable-silent-rules \
-      --disable-gnutls \
-      --disable-ntbtls \
-      --prefix=${LOCAL}/gnupg \
-      --enable-symcryptrun \
-      --with-pinentry-pgm=${LOCAL}/pinentry/bin/pinentry \
-      --enable-all-tests \
-      --disable-sqlite \
-      --disable-ccid-driver && make -j4 && \
-      make install
+pkgs=(
+    "libgpg-error-1.32.tar.gz"
+    "libgcrypt-1.8.3.tar.gz"
+    "libassuan-2.5.1.tar.bz2"
+    "libksba-1.3.5.tar.bz2"
+    "npth-1.6.tar.bz2"
+    "gnupg-2.2.10.tar.bz2"
+    "gettext-0.19.8.1.tar.xz"
+    "pinentry-1.1.0.tar.bz2"
+    "ntbtls-0.1.2.tar.bz2"
+);
+
+urls=(
+    "https://gnupg.org/ftp/gcrypt/libgpg-error/${pkgs[1]}"
+    "https://gnupg.org/ftp/gcrypt/libgcrypt/${pkgs[2]}"
+    "https://gnupg.org/ftp/gcrypt/libassuan/${pkgs[3]}"
+    "https://gnupg.org/ftp/gcrypt/libksba/${pkgs[4]}"
+    "https://gnupg.org/ftp/gcrypt/npth/${pkgs[5]}"
+    "https://gnupg.org/ftp/gcrypt/gnupg/${pkgs[6]}"
+    "https://ftp.gnu.org/pub/gnu/gettext/${pkgs[7]}"
+    "https://gnupg.org/ftp/gcrypt/pinentry/${pkgs[8]}"
+    "https://gnupg.org/ftp/gcrypt/ntbtls/${pkgs[9]}"
+);
+
+for pkg in ${urls[@]}; do
+    curl -OL ${pkg}
+done;
+
+for pkg in ${pkgs[@]}; do
+    if [[ -f ${pkg} ]]; then
+        if [[ 'gz' == ${pkg##*.} ]]; then
+            tar -zxf ${pkg}
+        elif [[ 'bz2' == ${pkg##*.} ]]; then
+            tar -jxf ${pkg}
+        elif [[ 'xz' == ${pkg##*.} ]]; then
+            tar -Jxf ${pkg}
+        fi
+    fi
+done;
 ```
 
 ## 常用Command
@@ -108,6 +79,7 @@ gpgconf --kill gpg-agent && gpg-agent --use-standard-socket --pinentry-program $
 gpg --list-secret-keys --keyid-format SHORT
 gpg --list-secret-keys --keyid-format LONG
 gpg -vvv --debug-all --keyserver keyserver.opensuse.org --send-keys KEY-IDS
+gpg -v --keyserver keyserver.ubuntu.com --send-keys KEY-IDS
 
 # 导出公钥
 gpg --export -a KEY-ID > KEY-ID.key

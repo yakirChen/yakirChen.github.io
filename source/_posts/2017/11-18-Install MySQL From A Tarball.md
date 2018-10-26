@@ -11,9 +11,9 @@ description: Install MySQL From A Tarball
 
 ### 安装前环境变量配置
 ```bash
-export MYSQL_BASE_DIR=${HOME}/local/mysql
-export MYSQL_DATA_DIR=/Volumes/Toshiba/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/Toshiba/mysql/logs
+export MYSQL_BASE_DIR=/Volumes/Toshiba/servers/mysql
+export MYSQL_DATA_DIR=/Volumes/Toshiba/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/Toshiba/repos/mysql/logs
 # 初始化的过程中不要在MySQL的`data`目录中放任何内容
 ```
 
@@ -180,6 +180,9 @@ echo '启动mysql实例'
 ### 添加用户 & 用户修改
 
 *见macOS安装*
+
+#### update 
+- 10/23/2018 mysql 8.0.13 macOS 10.14
 
 --- 
 

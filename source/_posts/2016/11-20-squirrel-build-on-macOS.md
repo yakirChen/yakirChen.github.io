@@ -67,9 +67,9 @@ cmake --version
 #### boost构建: 更新至`1.68`版本
 
 ```bash
-./bootstrap.sh --prefix=${LOCAL} --with-libraries=all && \
+./bootstrap.sh --prefix=${BOOST_HOME} --with-libraries=all && \
     ./b2 -j4 && \
-    ./b2 -j4 --prefix=${LOCAL} install # 默认安装在/usr/local目录下 
+    ./b2 -j4 --prefix=${BOOST_HOME} install # 默认安装在/usr/local目录下 
 
 # 引入环境变量 
 export BOOST_ROOT=${LOCAL}
@@ -106,6 +106,7 @@ cd plum && \
 ### 7. 快捷键
 1. `CTRL-.`可以切换**全\半角**标点符号  
 2. `CTRL-SHIFT-<数字>` 可切换输入法(简体、繁体)  
+3. `SHIFT-Fn-DELETE` 从词库中删除错误的词, 然后使用方向键选中词  
 
 ###### change-log
 
