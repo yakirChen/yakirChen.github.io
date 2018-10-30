@@ -126,7 +126,8 @@ cargo run
 ### 组件安装
 - 安装方式一
 ```bash
-cargo install --force racer mdbook cargo-src
+cargo install -f -j 6 --all-features -v racer mdbook cargo-src fd-find
+strip xxx....
 ```
 
 - 安装方式二(源码安装)

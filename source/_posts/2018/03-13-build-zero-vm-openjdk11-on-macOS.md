@@ -1,10 +1,10 @@
 ---
-title: Build OpenJDK9 Zero VM on macOS (interpreted mode)
+title: Build OpenJDK11 Zero VM on macOS (interpreted mode) [待更新]
 date: 2018/03/13
 tags: [Java,JDK,OpenJDK,ZeroVM,Hotspot]
 categories: [Tech]
 toc: true
-description: Build OpenJDK9 Zero VM on macOS (interpreted mode)
+description: Build OpenJDK11 Zero VM on macOS (interpreted mode)
 ---
 
 ## 前置
@@ -24,32 +24,51 @@ description: Build OpenJDK9 Zero VM on macOS (interpreted mode)
 ## 获得源码
 
 ```bash
-hg clone http://hg.openjdk.java.net/jdk-updates/jdk9u/
-cd jdk9u
-sh ./get_source.sh
+hg clone http://hg.openjdk.java.net/jdk-updates/jdk11u/
 ```
 
-## libffi
+## 安装依赖
+### freetype
 ```bash
-git clone git@github.com:libffi/libffi.git
+./configure --prefix=${LOCAL} --without-harfbuzz && \
+    make -j4 && \
+    make install
+```
+
+### libffi
+```bash
+git clone --depth 1 git@github.com:libffi/libffi.git
 cd libffi
-./autogen.sh
-python2 ./generate-darwin-source-and-headers.py
-./configure --enable-debug --enable-purify-safety --prefix=${LOCAL_DIR}
-make -j4 && make install
+./autogen.sh && \
+# python ./generate-darwin-source-and-headers.py && \
+./configure --enable-debug \
+    --disable-dependency-tracking \
+    --enable-purify-safety \
+    --prefix=${LOCAL} && \
+    make -j4 && \
+    make install
+```
+
+### ccache(optional)
+```bash
+./configure --prefix=${LOCAL} && \
+    make -j4 && \
+    make install
 ```
 
 ## 生成Makefile
 ```bash
-bash ./configure --with-debug-level=slowdebug \
---with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home \
---with-freetype=/Users/yakir \
---with-freetype-include=/Users/yakir/local/include \
---disable-warnings-as-errors \
---with-jvm-features=zero \
---with-jvm-variants=zero \
---with-libffi=/Users/yakir/local \
---with-libffi-include=/Users/yakir/local/include
+mkdir build && \
+cd build && \
+bash ../configure --with-debug-level=slowdebug \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home \
+    --with-freetype=/Users/yakir \
+    --with-freetype-include=/Users/yakir/local/include \
+    --disable-warnings-as-errors \
+    --with-jvm-features=zero \
+    --with-jvm-variants=zero \
+    --with-libffi=/Users/yakir/local \
+    --with-libffi-include=/Users/yakir/local/include
 ```
 
 ## Troubleshooting
@@ -132,3 +151,6 @@ javac 9.0.4-internal
 ```
 
 
+## Update
+
+- 2018/10/26 OpenJDK9 -> OpenJDK11

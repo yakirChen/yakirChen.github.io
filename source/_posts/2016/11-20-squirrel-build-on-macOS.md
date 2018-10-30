@@ -60,19 +60,18 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-# cmake version 3.12.20180920-g2d119e
+# cmake version 3.13.20181030-g9330a
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
 #### boost构建: 更新至`1.68`版本
 
 ```bash
-./bootstrap.sh --prefix=${BOOST_HOME} --with-libraries=all && \
-    ./b2 -j4 && \
-    ./b2 -j4 --prefix=${BOOST_HOME} install # 默认安装在/usr/local目录下 
-
 # 引入环境变量 
-export BOOST_ROOT=${LOCAL}
+export BOOST_ROOT=/Volumes/Toshiba/repos/boost
+./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all && \
+    ./b2 -j4 && \
+    ./b2 -j4 --prefix=${BOOST_ROOT} install # 默认安装在/usr/local目录下 
 ```
 
 ### 3. 构建`Squirrel`依赖
