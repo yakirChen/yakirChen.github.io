@@ -74,11 +74,19 @@ cargo +nightly --version
 
 ### 通过rustup安装组件
 ```bash
+# nightly
 rustup component add rust-src --toolchain nightly
 rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
 rustup component add rustfmt-preview --toolchain nightly
-rustup component add clippy-preview --toolchain=nightly
+rustup component add clippy-preview --toolchain nightly
+
+# stable
+rustup component add rust-src --toolchain stable
+rustup component add rls-preview --toolchain stable
+rustup component add rust-analysis --toolchain stable
+rustup component add rustfmt-preview --toolchain stable
+rustup component add clippy-preview --toolchain stable
 ```
 
 ```bash
@@ -148,10 +156,10 @@ cd racer; cargo build # 编译之后二进制包在 ./target/debug/racer
 racer complete std::io::B
 
 # 输出类似信息
-# MATCH BufRead,1332,10,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
-# MATCH Bytes,1958,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes<R>
-# MATCH BufReader,56,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader<R>
-# MATCH BufWriter,393,11,/Volumes/sd/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter<W: Write>
+# MATCH BufRead,1332,10,/Volumes/Toshiba/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
+# MATCH Bytes,1959,11,/Volumes/Toshiba/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes<R>
+# MATCH BufReader,56,11,/Volumes/Toshiba/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader<R>
+# MATCH BufWriter,391,11,/Volumes/Toshiba/repos/rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter<W: Write>
 ```
 
 ### 编辑器支持
