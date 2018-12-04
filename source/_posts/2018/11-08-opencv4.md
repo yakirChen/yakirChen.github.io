@@ -37,10 +37,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_opencv_python3=ON \
     -D INSTALL_PYTHON_EXAMPLES=ON \
     -D INSTALL_C_EXAMPLES=OFF \
-    -D FFMPEG_LIBRARY=/Volumes/Toshiba/kit/tools/ffmpeg-4.0.2-macos64-shared/bin \
     -D BUILD_EXAMPLES=ON ..
 
-make -j6 && make install
+make -j 12 && make install
 ```
 
 
