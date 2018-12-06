@@ -193,6 +193,11 @@ LSP文档 [LSP.readthedocs.io](https://lsp.readthedocs.io/), [docs](https://gith
 ~~2. 组合二~~
 
 
+### 工具集
+[lsd](https://github.com/Peltoche/lsd)
+[hyperfine](https://github.com/sharkdp/hyperfine)
+[fd](https://github.com/sharkdp/fd)
+
 ---
 
 Reference:  
