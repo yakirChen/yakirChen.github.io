@@ -197,6 +197,7 @@ LSP文档 [LSP.readthedocs.io](https://lsp.readthedocs.io/), [docs](https://gith
 [lsd](https://github.com/Peltoche/lsd)
 [hyperfine](https://github.com/sharkdp/hyperfine)
 [fd](https://github.com/sharkdp/fd)
+[cargo-watch](https://github.com/passcod/cargo-watch)
 
 ---
 

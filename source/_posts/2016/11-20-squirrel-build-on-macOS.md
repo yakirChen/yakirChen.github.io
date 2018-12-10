@@ -60,7 +60,8 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-# cmake version 3.13.20181030-g9330a
+# cmake version 3.13.20181209-gdd8c5
+#
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
