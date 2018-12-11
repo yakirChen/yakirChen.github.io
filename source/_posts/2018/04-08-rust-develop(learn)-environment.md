@@ -81,6 +81,13 @@ rustup component add rust-analysis --toolchain nightly
 rustup component add rustfmt-preview --toolchain nightly
 rustup component add clippy-preview --toolchain nightly
 
+#beta
+rustup component add rust-src --toolchain beta
+rustup component add rls-preview --toolchain beta
+rustup component add rust-analysis --toolchain beta
+rustup component add rustfmt-preview --toolchain beta
+rustup component add clippy-preview --toolchain beta
+
 # stable
 rustup component add rust-src --toolchain stable
 rustup component add rls-preview --toolchain stable
