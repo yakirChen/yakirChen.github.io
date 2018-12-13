@@ -24,13 +24,21 @@ description: Junit 5 Quick Start
     <maven.compiler.target>11</maven.compiler.target>
 
     <!-- junit -->
-    <org.junit5.platform.version>1.2.0</org.junit5.platform.version>
-    <org.junit5.jupiter.version>5.2.0</org.junit5.jupiter.version>
+    <org.junit5.platform.version>1.3.2</org.junit5.platform.version>
+    <org.junit5.jupiter.version>5.3.2</org.junit5.jupiter.version>
+    <org.junit5.vintage.version>5.3.2</org.junit5.vintage.version>
 </properties>
 
+<!-- junit5 & junit4 -->
 <dependency>
     <groupId>org.junit.platform</groupId>
     <artifactId>junit-platform-launcher</artifactId>
+    <version>${org.junit5.platform.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-engine</artifactId>
     <version>${org.junit5.platform.version}</version>
     <scope>test</scope>
 </dependency>
@@ -44,6 +52,24 @@ description: Junit 5 Quick Start
     <groupId>org.junit.jupiter</groupId>
     <artifactId>junit-jupiter-engine</artifactId>
     <version>${org.junit5.jupiter.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.vintage</groupId>
+    <artifactId>junit-vintage-engine</artifactId>
+    <version>${org.junit5.vintage.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>${org.junit5.jupiter.version}</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>${junit4.version}</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -184,23 +210,23 @@ void test.Test_LangString.donothing() is @Disabled
 
 ```xml
 <properties>
-    <plugin_surefire_version>2.19.1</plugin_surefire_version>
+    <plugin.surefire.version>2.22.1</plugin.surefire.version>
 </properties>
 
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
-    <version>${plugin_surefire_version}</version>
+    <version>${plugin.surefire.version}</version>
     <dependencies>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>${junit5_platform_version}</version>
+            <version>${org.junit5.platform.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit5_jupiter_version}</version>
+            <version>${org.junit5.jupiter.version}</version>
         </dependency>
     </dependencies>
 </plugin>

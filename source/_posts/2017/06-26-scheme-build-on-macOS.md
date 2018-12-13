@@ -11,11 +11,12 @@ description: Chez Scheme安装初探(macOS)
 ## 1. 获取代码
 ```bash
 git clone --recursive --depth 1 git@github.com:cisco/ChezScheme.git
+gcr1 git@github.com:cisco/ChezScheme.git
 ```
 
 ## 2. 预先配置环境变量
 ```bash
-export CHEZ_SCHEME_HOME=${VOLUMES_TOSHIBA_SERVERS}/chez_scheme
+export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export PATH=$CHEZ_SCHEME_HOME/bin:$PATH
 ```
 
@@ -39,7 +40,7 @@ expeditor.c:886:10: fatal error: 'X11/Xlib.h' file not found
 ## 4. 编译安装
 ```bash
 ./configure --installprefix=${CHEZ_SCHEME_HOME}
-make -j6
+make -j 12
 make install
 ```
 
