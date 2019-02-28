@@ -99,6 +99,33 @@
   </entry>
   
   <entry>
+    <title>vim模式&amp;按键映射</title>
+    <link href="http://yakirchen.com/2018/09-05-vim%E6%A8%A1%E5%BC%8F&amp;%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/"/>
+    <id>http://yakirchen.com/2018/09-05-vim模式&amp;按键映射/</id>
+    <published>2018-09-04T16:00:00.000Z</published>
+    <updated>2018-12-06T07:03:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="控制字符"><a href="#控制字符" class="headerlink" title="控制字符"></a>控制字符</h3><p><a href="https://ss64.com/osx/syntax-keybindings.html" target="_blank" rel="noopener">macOS Key bindings</a><br><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6" target="_blank" rel="noopener">控制字符</a><br><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E9%94%AE#%E7%AC%A6%E5%8F%B7" target="_blank" rel="noopener">控制键#符号</a><br><a href="https://zh.wikipedia.org/wiki/%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6" target="_blank" rel="noopener">转义字符</a><br><a href="https://zh.wikipedia.org/wiki/%E8%BD%AC%E6%8D%A2%E9%94%AE" target="_blank" rel="noopener">转换键</a></p><h3 id="macOS-Unicode-十六进制输入"><a href="#macOS-Unicode-十六进制输入" class="headerlink" title="macOS Unicode 十六进制输入"></a>macOS Unicode 十六进制输入</h3><p><strong>系统偏好设置</strong> &gt; <strong>添加输入法</strong> &gt; <strong>其他</strong> &gt; <strong>Unicode 十六进制输入</strong><br>语言栏切换到Unicode输入，按Option键同时输入Unicode编码即可  </p><p>Apple/Command: 2318 ⌘<br>Alt/Option: 2325 ⌥<br>Shift: 21E7 ⇧<br>Enter: 23ce  ⏎<br>Delete: 232B ⌫<br>ESC: 238B ⎋<br>Control: 2303 ⌃<br>Capslock: 21ea ⇪<br>Tab: 8677 ⇥<br>Apple Logo: F8FF or Option-Shift-K </p><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ol><li>Normal Mode</li></ol><p>普通模式, <strong>Terminal</strong> <code>vim</code> 之后, 所处在的默认模式</p><ol start="2"><li>Visual Mode</li></ol><p>阅览模式, Visual 可以选择字符、行、列, 在 Normal 下, 按 <code>v</code>, <code>V</code>, <code>&lt;CTRL&gt;+v</code> 进入阅览模式</p><ol start="3"><li>Command Mode</li></ol><p>命令模式, 在 Normal 下, 按 <code>:</code> 进入命令模式, 在 Normal 下, 按 <code>Q</code> 进入多行命令模式</p><ol start="4"><li>Insert Mode</li></ol><p>输入模式, 在 Normal 下, 按 <code>i</code>, <code>I</code>, <code>a</code>, <code>A</code>, <code>o</code>, <code>O</code> 进入输入模式</p><h3 id="键盘映射"><a href="#键盘映射" class="headerlink" title="键盘映射"></a>键盘映射</h3><p>命令行模式下输入 <code>:h key-notation</code> 或 <code>:h key-codes</code> 或 <code>:h keycodes</code> 查看键盘符号</p><h3 id="获得help"><a href="#获得help" class="headerlink" title="获得help"></a>获得help</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim +<span class="built_in">help</span></span><br><span class="line"><span class="comment"># 等同在 命令模式下输入 `:help`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在help页输入命令 `:only` 全窗口显示帮助页</span></span><br></pre></td></tr></table></figure><p>vim自带文档转换为html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir vim-docs &amp;&amp; <span class="built_in">cd</span> vim-docs</span><br><span class="line">sudo perl /usr/share/vim/vim80/doc/vim2html.pl /usr/share/vim/vim80/doc/*.*</span><br><span class="line">chown &lt;YOUR-USER-NAME&gt;:staff *</span><br></pre></td></tr></table></figure></p><p><a href="https://sourceforge.net/projects/vimcdoc/files/pdf-manual/" target="_blank" rel="noopener">中文翻译</a></p><h3 id="macOS-默认按键绑定"><a href="#macOS-默认按键绑定" class="headerlink" title="macOS 默认按键绑定"></a>macOS 默认按键绑定</h3><p><code>/System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict</code></p><p>*省略Mode, xxx Mode 看着乱…懒….</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;控制字符&quot;&gt;&lt;a href=&quot;#控制字符&quot; class=&quot;headerlink&quot; title=&quot;控制字符&quot;&gt;&lt;/a&gt;控制字符&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://ss64.com/osx/syntax-keybindings.html&quot; target=
+      
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://yakirchen.com/categories/Tech/"/>
+    
+    
+      <category term="macOS" scheme="http://yakirchen.com/tags/macOS/"/>
+    
+      <category term="vim" scheme="http://yakirchen.com/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim拓展命令</title>
     <link href="http://yakirchen.com/2018/09-5-vim%E6%8B%93%E5%B1%95%E5%91%BD%E4%BB%A4/"/>
     <id>http://yakirchen.com/2018/09-5-vim拓展命令/</id>
@@ -114,33 +141,6 @@
         &lt;p&gt;&lt;code&gt;:%TOhtml&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;转换vim自带文档为html&lt;/p&gt;
 
-      
-    
-    </summary>
-    
-      <category term="Tech" scheme="http://yakirchen.com/categories/Tech/"/>
-    
-    
-      <category term="macOS" scheme="http://yakirchen.com/tags/macOS/"/>
-    
-      <category term="vim" scheme="http://yakirchen.com/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vim模式&amp;按键映射</title>
-    <link href="http://yakirchen.com/2018/09-05-vim%E6%A8%A1%E5%BC%8F&amp;%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/"/>
-    <id>http://yakirchen.com/2018/09-05-vim模式&amp;按键映射/</id>
-    <published>2018-09-04T16:00:00.000Z</published>
-    <updated>2018-12-06T07:03:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="控制字符"><a href="#控制字符" class="headerlink" title="控制字符"></a>控制字符</h3><p><a href="https://ss64.com/osx/syntax-keybindings.html" target="_blank" rel="noopener">macOS Key bindings</a><br><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6" target="_blank" rel="noopener">控制字符</a><br><a href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E9%94%AE#%E7%AC%A6%E5%8F%B7" target="_blank" rel="noopener">控制键#符号</a><br><a href="https://zh.wikipedia.org/wiki/%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6" target="_blank" rel="noopener">转义字符</a><br><a href="https://zh.wikipedia.org/wiki/%E8%BD%AC%E6%8D%A2%E9%94%AE" target="_blank" rel="noopener">转换键</a></p><h3 id="macOS-Unicode-十六进制输入"><a href="#macOS-Unicode-十六进制输入" class="headerlink" title="macOS Unicode 十六进制输入"></a>macOS Unicode 十六进制输入</h3><p><strong>系统偏好设置</strong> &gt; <strong>添加输入法</strong> &gt; <strong>其他</strong> &gt; <strong>Unicode 十六进制输入</strong><br>语言栏切换到Unicode输入，按Option键同时输入Unicode编码即可  </p><p>Apple/Command: 2318 ⌘<br>Alt/Option: 2325 ⌥<br>Shift: 21E7 ⇧<br>Enter: 23ce  ⏎<br>Delete: 232B ⌫<br>ESC: 238B ⎋<br>Control: 2303 ⌃<br>Capslock: 21ea ⇪<br>Tab: 8677 ⇥<br>Apple Logo: F8FF or Option-Shift-K </p><h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><ol><li>Normal Mode</li></ol><p>普通模式, <strong>Terminal</strong> <code>vim</code> 之后, 所处在的默认模式</p><ol start="2"><li>Visual Mode</li></ol><p>阅览模式, Visual 可以选择字符、行、列, 在 Normal 下, 按 <code>v</code>, <code>V</code>, <code>&lt;CTRL&gt;+v</code> 进入阅览模式</p><ol start="3"><li>Command Mode</li></ol><p>命令模式, 在 Normal 下, 按 <code>:</code> 进入命令模式, 在 Normal 下, 按 <code>Q</code> 进入多行命令模式</p><ol start="4"><li>Insert Mode</li></ol><p>输入模式, 在 Normal 下, 按 <code>i</code>, <code>I</code>, <code>a</code>, <code>A</code>, <code>o</code>, <code>O</code> 进入输入模式</p><h3 id="键盘映射"><a href="#键盘映射" class="headerlink" title="键盘映射"></a>键盘映射</h3><p>命令行模式下输入 <code>:h key-notation</code> 或 <code>:h key-codes</code> 或 <code>:h keycodes</code> 查看键盘符号</p><h3 id="获得help"><a href="#获得help" class="headerlink" title="获得help"></a>获得help</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim +<span class="built_in">help</span></span><br><span class="line"><span class="comment"># 等同在 命令模式下输入 `:help`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在help页输入命令 `:only` 全窗口显示帮助页</span></span><br></pre></td></tr></table></figure><p>vim自带文档转换为html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir vim-docs &amp;&amp; <span class="built_in">cd</span> vim-docs</span><br><span class="line">sudo perl /usr/share/vim/vim80/doc/vim2html.pl /usr/share/vim/vim80/doc/*.*</span><br><span class="line">chown &lt;YOUR-USER-NAME&gt;:staff *</span><br></pre></td></tr></table></figure></p><p><a href="https://sourceforge.net/projects/vimcdoc/files/pdf-manual/" target="_blank" rel="noopener">中文翻译</a></p><h3 id="macOS-默认按键绑定"><a href="#macOS-默认按键绑定" class="headerlink" title="macOS 默认按键绑定"></a>macOS 默认按键绑定</h3><p><code>/System/Library/Frameworks/AppKit.framework/Resources/StandardKeyBinding.dict</code></p><p>*省略Mode, xxx Mode 看着乱…懒….</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;控制字符&quot;&gt;&lt;a href=&quot;#控制字符&quot; class=&quot;headerlink&quot; title=&quot;控制字符&quot;&gt;&lt;/a&gt;控制字符&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://ss64.com/osx/syntax-keybindings.html&quot; target=
       
     
     </summary>
