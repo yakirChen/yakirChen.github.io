@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2018/03-13-build-zero-vm-openjdk11-on-macOS/</loc>
+    <loc>http://yakirchen.com/2018/04-28-jdk-javac/</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2017/09-22-building-gcc7-on-macOS/</loc>
+    <loc>http://yakirchen.com/2017/07-28-un-%E5%B0%8F%E5%92%8C%E5%B1%B1/</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2017/10-13-unpackage-macOS-installer-package/</loc>
+    <loc>http://yakirchen.com/2017/09-22-building-gcc7-on-macOS/</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
@@ -93,21 +93,7 @@
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2018/07-20-%E6%8B%94%E9%AB%98/</loc>
-    
-    <lastmod>2018-12-06T06:46:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yakirchen.com/2018/09-5-vim%E6%8B%93%E5%B1%95%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-12-06T06:46:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yakirchen.com/about/index.html</loc>
+    <loc>http://yakirchen.com/2017/10-13-unpackage-macOS-installer-package/</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
@@ -121,7 +107,21 @@
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2017/07-28-un-%E5%B0%8F%E5%92%8C%E5%B1%B1/</loc>
+    <loc>http://yakirchen.com/2018/09-5-vim%E6%8B%93%E5%B1%95%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2018-12-06T06:46:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yakirchen.com/2018/07-20-%E6%8B%94%E9%AB%98/</loc>
+    
+    <lastmod>2018-12-06T06:46:47.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yakirchen.com/2018/03-13-build-zero-vm-openjdk11-on-macOS/</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://yakirchen.com/2018/04-28-jdk-javac/</loc>
+    <loc>http://yakirchen.com/about/index.html</loc>
     
     <lastmod>2018-12-06T06:46:47.000Z</lastmod>
     
