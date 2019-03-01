@@ -1,4 +1,4 @@
-# [yakirchen.com](yakirchen.com)
+# [yakirchen.github.io](yakirchen.github.io)
 
 ```bash
 npm install hexo-renderer-pug --save

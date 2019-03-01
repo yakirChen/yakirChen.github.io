@@ -11,9 +11,9 @@ description: Install MySQL From A Tarball
 
 ### 安装前环境变量配置
 ```bash
-export MYSQL_BASE_DIR=/Volumes/Toshiba/servers/mysql
-export MYSQL_DATA_DIR=/Volumes/Toshiba/repos/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/Toshiba/repos/mysql/logs
+export MYSQL_BASE_DIR=/Volumes/To/servers/mysql
+export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 # 初始化的过程中不要在MySQL的`data`目录中放任何内容
 ```
 
