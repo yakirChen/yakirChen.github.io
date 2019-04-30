@@ -33,6 +33,11 @@ curl https://sh.rustup.rs -sSf | sh -s -- \
     --no-modify-path \
     --default-toolchain nightly \
     -y
+    
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- \
+    --no-modify-path \
+    --default-toolchain nightly \
+    -y
 ```
 ```powershell
 rustup-init.exe --no-modify-path --default-toolchain nightly  -y
@@ -80,6 +85,7 @@ rustup component add rls-preview --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
 rustup component add rustfmt-preview --toolchain nightly
 rustup component add clippy-preview --toolchain nightly
+rustup component add miri --toolchain nightly
 
 #beta
 rustup component add rust-src --toolchain beta
@@ -87,6 +93,7 @@ rustup component add rls-preview --toolchain beta
 rustup component add rust-analysis --toolchain beta
 rustup component add rustfmt-preview --toolchain beta
 rustup component add clippy-preview --toolchain beta
+rustup component add miri --toolchain beta
 
 # stable
 rustup component add rust-src --toolchain stable
@@ -94,6 +101,7 @@ rustup component add rls-preview --toolchain stable
 rustup component add rust-analysis --toolchain stable
 rustup component add rustfmt-preview --toolchain stable
 rustup component add clippy-preview --toolchain stable
+rustup component add miri --toolchain stable
 ```
 
 ```bash
