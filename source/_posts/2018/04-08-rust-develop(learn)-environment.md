@@ -81,26 +81,26 @@ cargo +nightly --version
 ```bash
 # nightly
 rustup component add rust-src --toolchain nightly
-rustup component add rls-preview --toolchain nightly
+rustup component add rls --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
-rustup component add rustfmt-preview --toolchain nightly
-rustup component add clippy-preview --toolchain nightly
+rustup component add rustfmt --toolchain nightly
+rustup component add clippy --toolchain nightly
 rustup component add miri --toolchain nightly
 
 #beta
 rustup component add rust-src --toolchain beta
-rustup component add rls-preview --toolchain beta
+rustup component add rls --toolchain beta
 rustup component add rust-analysis --toolchain beta
-rustup component add rustfmt-preview --toolchain beta
-rustup component add clippy-preview --toolchain beta
+rustup component add rustfmt --toolchain beta
+rustup component add clippy --toolchain beta
 rustup component add miri --toolchain beta
 
 # stable
 rustup component add rust-src --toolchain stable
-rustup component add rls-preview --toolchain stable
+rustup component add rls --toolchain stable
 rustup component add rust-analysis --toolchain stable
-rustup component add rustfmt-preview --toolchain stable
-rustup component add clippy-preview --toolchain stable
+rustup component add rustfmt --toolchain stable
+rustup component add clippy --toolchain stable
 rustup component add miri --toolchain stable
 ```
 
