@@ -66,7 +66,7 @@ cmake --version
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-#### boost构建: 更新至`1.68`版本
+#### boost构建: 更新至`1.69`版本
 
 ```bash
 # 引入环境变量 
@@ -120,6 +120,7 @@ cd plum && \
 + **更新2018/4/17. 引入`東風破`配置工具, 更新boost 1.67**
 + **更新2018/8/25. cmake & boost 並行化加速編譯, 更新boost 1.68**
 + **更新2018/9/20. macOS 10.14**
++ **更新2019/6/17. Squirrel 0.12.0**
 
 ---
 
