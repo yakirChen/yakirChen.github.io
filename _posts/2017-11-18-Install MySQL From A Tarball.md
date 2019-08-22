@@ -12,7 +12,7 @@ description: Install MySQL From A Tarball
 
 ### 安装前环境变量配置
 ```bash
-export MYSQL_BASE_DIR=/Volumes/To/servers/mysql
+export MYSQL_BASE_DIR=/Users/yakir/local/mysql
 export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 # 初始化的过程中不要在MySQL的`data`目录中放任何内容
@@ -183,11 +183,13 @@ echo '启动mysql实例'
 *见macOS安装*
 
 #### update 
-- 10/23/2018 mysql 8.0.13 macOS 10.14
+- 2018/10/23 mysql 8.0.13 macOS 10.14
+- 2019/08/13 mysql 8.0.17 macOS 10.14
 
 --- 
 
 Reference: 
 
 [MySQL安装包下载](https://dev.mysql.com/downloads/mysql/)  
-[MySQL用户文档](https://dev.mysql.com/doc/refman/5.7/en/)  
+[MySQL用户文档 5.7](https://dev.mysql.com/doc/refman/5.7/en/)  
+[MySQL用户文档 8.0](https://dev.mysql.com/doc/refman/8.0/en/)  

@@ -206,10 +206,36 @@ LSP文档 [LSP.readthedocs.io](https://lsp.readthedocs.io/), [docs](https://gith
 
 
 ### 工具集
-+ [lsd](https://github.com/Peltoche/lsd)
-+ [hyperfine](https://github.com/sharkdp/hyperfine)
-+ [fd](https://github.com/sharkdp/fd)
++ amxml
++ bat
++ cargo-deps
++ cargo-lipo
++ cargo-modules
 + [cargo-watch](https://github.com/passcod/cargo-watch)
++ cargo-web
++ cbindgen
++ evcxr
++ evcxr_repl
++ fblog
++ [fd-find](https://github.com/sharkdp/fd)
++ ferris-says
++ grapple
++ hexyl
++ [hyperfine](https://github.com/sharkdp/hyperfine)
++ jql
++ jsonxf
++ [lsd](https://github.com/Peltoche/lsd)
++ mdbook
++ mdcat
++ qrencode
++ racer
++ [rget](https://github.com/Arcterus/rget.git?branch=refactor#f86d1b0f)
++ ripgrep
++ shadowsocks-rust](https://github.com/shadowsocks/shadowsocks-rust.git#6f4f7546)
++ [silicon](https://github.com/Aloxaf/silicon#06671499)
++ tealdeer
++ xterm256_converter
+
 
 ---
 
