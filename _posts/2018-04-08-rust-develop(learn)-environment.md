@@ -231,7 +231,7 @@ LSP文档 [LSP.readthedocs.io](https://lsp.readthedocs.io/), [docs](https://gith
 + racer
 + [rget](https://github.com/Arcterus/rget.git?branch=refactor#f86d1b0f)
 + ripgrep
-+ shadowsocks-rust](https://github.com/shadowsocks/shadowsocks-rust.git#6f4f7546)
++ [shadowsocks-rust](https://github.com/shadowsocks/shadowsocks-rust.git#6f4f7546)
 + [silicon](https://github.com/Aloxaf/silicon#06671499)
 + tealdeer
 + xterm256_converter
