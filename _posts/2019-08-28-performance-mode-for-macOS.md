@@ -14,6 +14,16 @@ description: macOS 开启性能模式
 + [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
 
 
+## 重置NVRAM
+
+Option + Command + P + R
+
+> 将 Mac 关机，然后开机并立即同时按住以下四个按键：Option、Command、P 和 R。您可以在大约 20 秒后松开这些按键，在此期间您的 Mac 可能看似在重新启动。
+>  
+> 在会发出启动声的 Mac 电脑上，您可以在两次启动声之后松开这些按键。
+>  
+> 在配有 Apple T2 安全芯片的 Mac 电脑上，您可以在 Apple 标志出现并再次消失后松开这些按键。
+
 ```shell
 nvram boot-args
 ```

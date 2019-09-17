@@ -20,7 +20,7 @@ description: Rust Develop(Learn) Environment (macOS)
 ## 配置
 
 ### 预先设置环境变量
-```bash
+```shell
 export RUST_HOME=${LOCAL}/rust
 export RUSTUP_HOME=${VOLUMES_SD}/repos/rustup
 export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src
@@ -29,7 +29,7 @@ export PATH=$RUST_HOME/bin:$CARGO_HOME/bin:$PATH
 ```
 
 ### 安装**rustup**
-```bash
+```shell
 curl https://sh.rustup.rs -sSf | sh -s -- \
     --no-modify-path \
     --default-toolchain nightly \
@@ -40,6 +40,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- \
     --default-toolchain nightly \
     -y
 ```
+
 ```powershell
 rustup-init.exe --no-modify-path --default-toolchain nightly  -y
 ```
@@ -47,7 +48,8 @@ rustup-init.exe --no-modify-path --default-toolchain nightly  -y
 [输出提示信息](https://gist.github.com/yakirChen/b36bed33ec1a5e34b27c7144511cbb5a)
 `Cargo`的安装目录在预先设置的环境变量中已经配置完成  
 添加`oh-my-zsh`插件  
-```bash
+
+```shell
 rustup completions zsh > /Users/yakir/.oh-my-zsh/custom/plugins/rustup/_rustup
 # 在 ~/.zshrc 的plugins列表中添加 `rustup`
 ```
@@ -57,20 +59,21 @@ rustup completions zsh > /Users/yakir/.oh-my-zsh/custom/plugins/rustup/_rustup
 [🙈 详见官方](https://github.com/rust-lang-nursery/rustup.rs)
 
 - 安装不同通道的`Rust`
-```bash
+```shell
 rustup install nightly
 rustup install beta
 rustup install stable
 ```
 
 - 更新rust和rutup
-```bash
+```shell
 rustup update && \
     rustup self update
 ```
 
 - 指定运行特定的通道(版本)
-```bash
+
+```shell
 rustup run stable cargo --version
 rustup run nightly rustc --version
 
@@ -79,7 +82,8 @@ cargo +nightly --version
 ```
 
 ### 通过rustup安装组件
-```bash
+
+```shell
 # nightly
 rustup component add rust-src --toolchain nightly
 rustup component add rls --toolchain nightly
@@ -105,14 +109,14 @@ rustup component add clippy --toolchain stable
 rustup component add miri --toolchain stable
 ```
 
-```bash
+```shell
 # 运行clippy
 cargo run --bin cargo-clippy --manifest-path=path_to_clippys_Cargo.toml
 ```
 
 #### alias
 为了偷懒👽
-```bash
+```shell
 alias rnr="rustup run nightly"
 alias rsr="rustup run stable"
 alias rbr="rustup run beta"
@@ -129,14 +133,14 @@ fn main() {
 ```
 
 编译 & 运行 
-```bash
+```shell
 rustc hello.rs
 ./hello 
 # hello
 ```
 
 ### 测试 Cargo 可用
-```bash
+```shell
 cargo init --bin honey
 #      Created binary (application) project
 cd honey
@@ -150,14 +154,14 @@ cargo run
 ### 组件安装
 - 安装方式一
 
-```bash
+```shell
 cargo install -f -j 6 --all-features -v racer mdbook cargo-src fd-find
 strip xxx....
 ```
 
 - 安装方式二(源码安装)
 
-```bash
+```shell
 git clone --depth 1 git@github.com:racer-rust/racer.git
 
 cd racer && cargo build --release # 编译之后二进制包在 ./target/release/racer
@@ -165,7 +169,7 @@ cd racer && cargo build --release # 编译之后二进制包在 ./target/release
 ```
 
 #### 测试 Racer 可用
-```bash
+```shell
 racer complete std::io::B
 
 # 输出类似信息
@@ -184,7 +188,7 @@ MATCH BufWriter,412,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-d
 #### Sublime Text 整合
 
 Sublime Text 3 [Package Control](https://packagecontrol.io/installation)安装, `ctrl + ~`启动控制台输入  
-```bash
+```shell
 import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 

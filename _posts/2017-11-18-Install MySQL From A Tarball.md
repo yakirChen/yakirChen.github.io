@@ -13,6 +13,7 @@ description: Install MySQL From A Tarball
 ### 安装前环境变量配置
 ```bash
 export MYSQL_BASE_DIR=/Users/yakir/local/mysql
+export MYSQL_COMMON_DIR=/Volumes/To/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 # 初始化的过程中不要在MySQL的`data`目录中放任何内容
@@ -21,13 +22,14 @@ export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 ### 初始化
 ```bash
 mkdir -p ${MYSQL_LOGS_DIR}
+mkdir /Volumes/To/repos/mysql/tmpdir
 mysqld --initialize \
 	--user=yakir \
 	--basedir=${MYSQL_BASE_DIR} \
 	--datadir=${MYSQL_DATA_DIR} \
 	--log-error=${MYSQL_LOGS_DIR}/error.log \
-	--pid-file=${MYSQL_DATA_DIR}/mysql.pid \
-	--socket=${MYSQL_DATA_DIR}/mysql.sock --port=3306
+	--pid-file=${MYSQL_COMMON_DIR}/mysql.pid \
+	--socket=${MYSQL_COMMON_DIR}/mysql.sock --port=3306
 ```
 
 ### 获取初始登录密码
@@ -41,8 +43,8 @@ mysqld --user=yakir \
 	--basedir=${MYSQL_BASE_DIR} \
 	--datadir=${MYSQL_DATA_DIR} \
 	--log-error=${MYSQL_LOGS_DIR}/error.log \
-	--pid-file=${MYSQL_DATA_DIR}/mysql.pid \
-	--socket=${MYSQL_DATA_DIR}/mysql.sock \
+	--pid-file=${MYSQL_COMMON_DIR}/mysql.pid \
+	--socket=${MYSQL_COMMON_DIR}/mysql.sock \
 	--server-id=80000 \
 	--log-bin=mysql-log \
 	--log-bin-index=mysql-log \
@@ -52,11 +54,13 @@ mysqld --user=yakir \
 ```
 
 ### 安全配置向导(optional)
-./mysql_secure_installation --socket=${MYSQL_DATA_DIR}/mysql.sock
+```shell
+./mysql_secure_installation --socket=${MYSQL_COMMON_DIR}/mysql.sock
+```
 
 ### 登录MySQL进行用户初始化
 ```bash
-mysql -uroot -p --socket=${MYSQL_DATA_DIR}/mysql.sock
+mysql -uroot -p --socket=${MYSQL_COMMON_DIR}/mysql.sock
 # 输入之前从日志中获取的初始密码
 
 # 修改root默认密码
@@ -76,7 +80,7 @@ FLUSH PRIVILEGES;
 
 ### 关闭MySQL服务
 ```bash
-mysqladmin shutdown --socket=${MYSQL_DATA_DIR}/mysql.sock -uroot -p
+mysqladmin shutdown --socket=${MYSQL_COMMON_DIR}/mysql.sock -uroot -p
 ```
 
 
@@ -122,8 +126,8 @@ chgrp -R mysql ${MYSQL_DATA_DIR}
         --basedir=${MYSQL_BASE_DIR} \
         --datadir=${MYSQL_DATA_DIR} \
         --log-error=${MYSQL_LOGS_DIR}/error.log \
-        --pid-file=${MYSQL_DATA_DIR}/mysql.pid \
-        --socket=${MYSQL_DATA_DIR}/mysql.sock \
+        --pid-file=${MYSQL_COMMON_DIR}/mysql.pid \
+        --socket=${MYSQL_COMMON_DIR}/mysql.sock \
         --port=3306
 
 /data/mysql/bin/mysql_ssl_rsa_setup \
@@ -131,8 +135,8 @@ chgrp -R mysql ${MYSQL_DATA_DIR}
         --basedir=${MYSQL_BASE_DIR} \
         --datadir=${MYSQL_DATA_DIR} \
         --log-error=${MYSQL_LOGS_DIR}/error.log \
-        --pid-file=${MYSQL_DATA_DIR}/mysql.pid \
-        --socket=${MYSQL_DATA_DIR}/mysql.sock \
+        --pid-file=${MYSQL_COMMON_DIR}/mysql.pid \
+        --socket=${MYSQL_COMMON_DIR}/mysql.sock \
         --port=3306
 ```
 
@@ -154,8 +158,8 @@ echo '启动mysql实例'
         --basedir=${MYSQL_BASE_DIR} \
         --datadir=${MYSQL_DATA_DIR} \
         --log-error=${MYSQL_LOGS_DIR}/error.log \
-        --pid-file=${MYSQL_DATA_DIR}/mysql.pid \
-        --socket=${MYSQL_DATA_DIR}/mysql.sock \
+        --pid-file=${MYSQL_COMMON_DIR}/mysql.pid \
+        --socket=${MYSQL_COMMON_DIR}/mysql.sock \
         --server-id=90000 \
         --log-bin=mysql-log \
         --log-bin-index=mysql-log \
