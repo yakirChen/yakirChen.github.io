@@ -12,17 +12,17 @@ description: Install MySQL From A Tarball
 
 ### 安装前环境变量配置
 ```bash
-export MYSQL_BASE_DIR=/Users/yakir/local/mysql
-export MYSQL_COMMON_DIR=/Volumes/To/repos/mysql
-export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
+export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
+export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
+export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
 # 初始化的过程中不要在MySQL的`data`目录中放任何内容
 ```
 
 ### 初始化
 ```bash
 mkdir -p ${MYSQL_LOGS_DIR}
-mkdir /Volumes/To/repos/mysql/tmpdir
+mkdir /Volumes/sm/repos/mysql/tmpdir
 mysqld --initialize \
 	--user=yakir \
 	--basedir=${MYSQL_BASE_DIR} \
