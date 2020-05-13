@@ -61,16 +61,16 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-# cmake version 3.15.5
+# cmake version 3.16.1
 #
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-#### boost构建: 更新至`1.71`版本
+#### boost构建: 更新至`1.72.0`版本
 
 ```bash
 # 引入环境变量 
-export BOOST_ROOT=/Volumes/To/repos/boost
+export BOOST_ROOT=/Volumes/sm/servers/boost
 ./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all && \
     ./b2 -j12 && \
     ./b2 -j12 --prefix=${BOOST_ROOT} install # 默认安装在/usr/local目录下 
@@ -122,6 +122,8 @@ cd plum && \
 + **更新2018/9/20. macOS 10.14**
 + **更新2019/6/17. Squirrel 0.12.0**
 + **更新2019/11/06. macOS 10.15 Squirrel 0.14.0** **Boost 1.71**
++ **更新2019/12/18. macOS 10.15.2 Squirrel 0.14.0 Boost 1.72.0 CMake 3.16.1**
++ **更新2020/05/13. macOS 10.15.4**
 
 ---
 
