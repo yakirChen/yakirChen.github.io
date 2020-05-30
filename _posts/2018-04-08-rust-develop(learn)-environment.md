@@ -91,6 +91,7 @@ rustup component add rust-analysis --toolchain nightly
 rustup component add rustfmt --toolchain nightly
 rustup component add clippy --toolchain nightly
 rustup component add miri --toolchain nightly
+rustup +nightly component add miri
 
 #beta
 rustup component add rust-src --toolchain beta
@@ -99,6 +100,7 @@ rustup component add rust-analysis --toolchain beta
 rustup component add rustfmt --toolchain beta
 rustup component add clippy --toolchain beta
 rustup component add miri --toolchain beta
+rustup +beta component add miri
 
 # stable
 rustup component add rust-src --toolchain stable
@@ -107,6 +109,7 @@ rustup component add rust-analysis --toolchain stable
 rustup component add rustfmt --toolchain stable
 rustup component add clippy --toolchain stable
 rustup component add miri --toolchain stable
+rustup +stable component add miri
 ```
 
 ```shell
