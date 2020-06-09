@@ -17,14 +17,15 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 5. [Libffi](https://github.com/libffi/libffi)
 6. [Freetype](https://www.freetype.org)
 7. [Ccache](https://ccache.samba.org)
-8. [XCode 10.3 (macOS 10.15.4 (19E287))](https://developer.apple.com/download/more/)
+~~8. [XCode 10.3 (macOS 10.15.4 (19E287))](https://developer.apple.com/download/more/)~~
+8. [Version 11.5 (11E608c) macOS 10.15.5 (19F101)](https://developer.apple.com/download/more/)
 
 [👉🏼 依赖安装](https://github.com/yakirChen/macOS-libs/blob/master/build.md)
 
 ## 获得源码
 
 ```bash
-hg clone http://hg.openjdk.java.net/jdk-updates/jdk10u/
+git clone --recurse-submodules --depth 1 https://github.com/openjdk/jdk.git
 ```
 
 ## libffi
@@ -39,6 +40,7 @@ cd libffi
 
 ## 生成Makefile
 ```bash
+make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
     --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/ \
     --with-toolchain-path=/Volumes/sm/app/Xcode10.3.app/Contents/Developer/usr/bin \
@@ -51,7 +53,7 @@ sh ./configure --enable-dtrace \
     --with-target-bits=64 \
     --with-libffi=/Users/yakir/local/brew/opt/libffi \
     --with-num-cores=4 \
-    --with-jobs=4
+    --with-jobs=12
 ```
 `--enable-ccache`选项看着加😁
 
@@ -60,7 +62,7 @@ sh ./configure --enable-dtrace \
 ====================================================
 A new configuration has been successfully created in
 /Volumes/sm/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/ --with-toolchain-path=/Volumes/sm/app/Xcode10.3.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms2G -Xmx2G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi'.
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/ --with-toolchain-path=/Volumes/sm/app/Xcode10.3.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms2G -Xmx2G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=4 --with-jobs=12'.
 
 Configuration summary:
 * Debug level:    slowdebug
@@ -73,8 +75,8 @@ Configuration summary:
 Tools summary:
 * Boot JDK:       java version "14.0.1" 2020-04-14 Java(TM) SE Runtime Environment (build 14.0.1+7) Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)  (at /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home)
 * Toolchain:      clang (clang/LLVM from Xcode 10.3)
-* C Compiler:     Version 10.0.1 (at /usr/bin/clang)
-* C++ Compiler:   Version 10.0.1 (at /usr/bin/clang++)
+* C Compiler:     Version 11.0.3 (at /usr/bin/clang)
+* C++ Compiler:   Version 11.0.3 (at /usr/bin/clang++)
 
 Build performance summary:
 * Cores to use:   12
@@ -83,7 +85,7 @@ Build performance summary:
 
 ## Make
 ```bash
-make JOBS=4
+make JOBS=12 && make images
 ```
 
 
