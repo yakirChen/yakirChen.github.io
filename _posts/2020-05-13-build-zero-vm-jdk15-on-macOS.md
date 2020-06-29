@@ -93,7 +93,7 @@ make JOBS=12 && make images
 
 ```bash
 % time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version
-openjdk version "15-internal" 2020-09-15
+openjdk 15-internal 2020-09-15
 OpenJDK Runtime Environment (slowdebug build 15-internal+0-adhoc.yakir.jdkbuild)
 OpenJDK 64-Bit Zero VM (slowdebug build 15-internal+0-adhoc.yakir.jdkbuild, interpreted mode)
 ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version  22.92s user 0.23s system 96% cpu 24.101 total
