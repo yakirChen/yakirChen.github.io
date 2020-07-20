@@ -62,7 +62,7 @@ sh ./configure --enable-dtrace \
 ====================================================
 A new configuration has been successfully created in
 /Volumes/sm/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/ --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms2G -Xmx2G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi'.
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/ --with-toolchain-path=/Volumes/sm/app/Xcode10.3.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms2G -Xmx2G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=4 --with-jobs=12'.
 
 Configuration summary:
 * Debug level:    slowdebug
@@ -70,11 +70,11 @@ Configuration summary:
 * JVM variants:   zero
 * JVM features:   zero: 'dtrace jni-check jvmti management nmt parallelgc serialgc services vm-structs zero' 
 * OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
-* Version string: 16-internal+0-adhoc.yakir.jdkbuild (16-internal)
+* Version string: 15-internal+0-adhoc.yakir.jdkbuild (15-internal)
 
 Tools summary:
-* Boot JDK:       java version "14.0.2" 2020-07-14 Java(TM) SE Runtime Environment (build 14.0.2+12-46) Java HotSpot(TM) 64-Bit Server VM (build 14.0.2+12-46, mixed mode, sharing)  (at /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home)
-* Toolchain:      clang (clang/LLVM from Xcode 11.6)
+* Boot JDK:       java version "14.0.1" 2020-04-14 Java(TM) SE Runtime Environment (build 14.0.1+7) Java HotSpot(TM) 64-Bit Server VM (build 14.0.1+7, mixed mode, sharing)  (at /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home)
+* Toolchain:      clang (clang/LLVM from Xcode 10.3)
 * C Compiler:     Version 11.0.3 (at /usr/bin/clang)
 * C++ Compiler:   Version 11.0.3 (at /usr/bin/clang++)
 
@@ -92,30 +92,31 @@ make JOBS=12 && make images
 ## 验证
 
 ```bash
-% time ./macosx-x86_64-zero-slowdebug/jdk/bin/java -version 
-openjdk version "16-internal" 2021-03-16
-OpenJDK Runtime Environment (slowdebug build 16-internal+0-adhoc.yakir.jdkbuild)
-OpenJDK 64-Bit Zero VM (slowdebug build 16-internal+0-adhoc.yakir.jdkbuild, interpreted mode)
-./macosx-x86_64-zero-slowdebug/jdk/bin/java -version  15.22s user 0.26s system 99% cpu 15.621 total
+% time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version
+openjdk 15-internal 2020-09-15
+OpenJDK Runtime Environment (slowdebug build 15-internal+0-adhoc.yakir.jdkbuild)
+OpenJDK 64-Bit Zero VM (slowdebug build 15-internal+0-adhoc.yakir.jdkbuild, interpreted mode)
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version  22.92s user 0.23s system 96% cpu 24.101 total
 ```
 
 ```bash
-% time ./macosx-x86_64-zero-slowdebug/jdk/bin/javac -version
-javac 16-internal
-./macosx-x86_64-zero-slowdebug/jdk/bin/javac -version  20.36s user 0.32s system 99% cpu 20.839 total
+% time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/javac -version
+javac 15-internal
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/javac -version  34.24s user 0.60s system 83% cpu 41.767 total
 ```
 
+
 ```bash
-% time ./macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java 
+% time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java
 Hello
-./macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java  81.46s user 2.10s system 99% cpu 1:24.18 total
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java  95.43s user 1.85s system 99% cpu 1:37.91 total
 ```
 
 对比Oracle Java 11
 ```bash
 % time java /Volumes/sm/Hello.java
 Hello
-java /Volumes/sm/Hello.java  2.08s user 0.21s system 184% cpu 1.242 total
+java /Volumes/sm/Hello.java  2.53s user 0.16s system 177% cpu 1.515 total
 ```
 
 Oracle Java 11 快太多
@@ -123,8 +124,8 @@ Oracle Java 11 快太多
 
 ```java
 // Hello.java
-public class Hello {
-    public static void main(String[] args) {
+public class Hello{
+    public static void main(String[] args){
         System.out.println("Hello");
     }
 }
