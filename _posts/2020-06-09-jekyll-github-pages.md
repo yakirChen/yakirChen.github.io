@@ -16,4 +16,8 @@ tags: [Blog,GitHub,Pages,Jekyll]
 gem install bundler
 bundler update
 bundler install
+
+gem install jekyll
+bundle update
+bundle exec jekyll serve
 ```

@@ -17,7 +17,7 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 5. [Libffi](https://github.com/libffi/libffi)
 6. [Freetype](https://www.freetype.org)
 7. [Ccache](https://ccache.samba.org)
-8. [Version 11.5 (11E608c) macOS 10.15.5 (19F101)](https://developer.apple.com/download/more/)
+8. [XCode Version 11.6 (11E708) macOS Version 10.15.6 (19G73)](https://developer.apple.com/download/more/)
 
 [👉🏼 依赖安装](https://github.com/yakirChen/macOS-libs/blob/master/build.md)
 
