@@ -27,21 +27,14 @@ github_username:  yakirChen
 
 # Build settings
 markdown: redcarpet #kramdown
-theme: minima
+# theme: minima
+theme: jekyll-swiss
 plugins:
   - jekyll-feed
   - github-pages
   - jekyll-seo-tag
-  
-minima:
-  social_links:
-    mastodon:
-      - username: jekyll
-        instance: example.com
-      - username: jekyll2
-        instance: example.com
-  
 
+theme_color: white
 
 # Exclude from processing.
 # The following items will not be processed, by default.
