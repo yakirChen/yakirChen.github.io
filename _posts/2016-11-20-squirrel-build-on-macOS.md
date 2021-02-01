@@ -61,31 +61,32 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-# cmake version 3.16.1
-#
+# cmake version 3.19.4
+
 # CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-#### boost构建: 更新至`1.72.0`版本
+#### boost构建: 更新至`1.75.0`版本
 
 ```bash
+# export BUILD_UNIVERSAL=1
 # 引入环境变量 
 export BOOST_ROOT=/Volumes/sm/servers/boost
 ./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all && \
-    ./b2 -j12 && \
+    ./b2 headers && \
     ./b2 -j12 --prefix=${BOOST_ROOT} install # 默认安装在/usr/local目录下 
 ```
 
 ### 3. 构建`Squirrel`依赖
 
 ```bash
-make deps && make -j12 # do not use make -jX when make deps 
+make deps && make -j12 ARCHS='x86_64' # do not use make -jX when make deps 
 ```
 
 ### 4. 构建成功,安装`Squirrel`
 
 ```bash
-sudo make install
+sudo make ARCHS='x86_64' install 
 ```
 
 ### 5. 東風破(plum)
@@ -124,6 +125,7 @@ cd plum && \
 + **更新2019/11/06. macOS 10.15 Squirrel 0.14.0** **Boost 1.71**
 + **更新2019/12/18. macOS 10.15.2 Squirrel 0.14.0 Boost 1.72.0 CMake 3.16.1**
 + **更新2020/05/13. macOS 10.15.4**
++ **更新2021/02/01. macOS 11.1 Boost 1.75.0 CMake 3.19.4 ARCHS='x86_64'**
 
 ---
 
