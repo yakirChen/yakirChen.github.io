@@ -10,7 +10,13 @@ description: Building GCC 11 on macOS
 
 ## 概述
 
-macOS Big Sur 11.3.1 构建 GCC 11
+macOS Big Sur
+
+OS: macOS 11.3.1 20E241 x86_64 
+Host: MacBookPro15,1 
+Kernel: 20.4.0 
+
+构建 GCC 11
 
 ## macOS命令行工具
 
@@ -52,54 +58,59 @@ export ISL_VERSION="0.18"
 tar -jxvf gmp-${GMP_VERSION}.tar.bz2 && \
 cd ${SOURCE_DIR}/gmp-${GMP_VERSION} && \
 mkdir build && cd build && \
-../configure --prefix=${GCC_HOME} --enable-cxx && \
-make -j4 && \
-make install
+  ../configure --prefix=${GCC_HOME} --enable-cxx && \
+  make -j4 && \
+  make install
 
 # mpfr
 tar -zxvf mpfr-${MPFR_VERSION}.tar.gz && \
 cd ${SOURCE_DIR}/mpfr-${MPFR_VERSION} && \
 mkdir build && cd build && \
-../configure --prefix=${GCC_HOME} --with-gmp=${GCC_HOME} && \
-make -j4 && \
-make install
+  ../configure --prefix=${GCC_HOME} --with-gmp=${GCC_HOME} && \
+  make -j4 && \
+  make install
 
 # mpc
 tar -zxvf mpc-${MPC_VERSION}.tar.gz && \
 cd ${SOURCE_DIR}/mpc-${MPC_VERSION} && \
 mkdir build && cd build && \
-../configure --prefix=${GCC_HOME} \
---with-gmp=${GCC_HOME} \
---with-mpfr=${GCC_HOME} && \
-make -j4 && \
-make install
+  ../configure --prefix=${GCC_HOME} \
+  --with-gmp=${GCC_HOME} \
+  --with-mpfr=${GCC_HOME} && \
+  make -j4 && \
+  make install
 
 # isl
 tar -jxvf isl-${ISL_VERSION}.tar.bz2 && \
-cd ${SOURCE_DIR}/isl-${ISL_VERSION} && \
-mkdir build && cd build && \
-../configure --prefix=${GCC_HOME} --with-gmp-prefix=${GCC_HOME} && \
-make -j4 && \
-make install
+  cd ${SOURCE_DIR}/isl-${ISL_VERSION} && \
+  mkdir build && cd build && \
+  ../configure --prefix=${GCC_HOME} --with-gmp-prefix=${GCC_HOME} && \
+  make -j4 && \
+  make install
 
 # gcc
 tar -Jxvf gcc-${GCC_VERSION}.tar.xz && \
-cd ${SOURCE_DIR}/gcc-${GCC_VERSION} && \
-mkdir build && cd build && \
-../configure --prefix=${GCC_HOME} \
---enable-checking=release \
---enable-host-shared \
---enable-compressed-debug-sections=all \
---enable-bootstrap \
---with-gmp=${GCC_HOME} \
---with-mpfr=${GCC_HOME} \
---with-mpc=${GCC_HOME} \
---enable-languages=c,c++,fortran,lto,objc,obj-c++ \
---enable-host-shared \
---with-isl=${GCC_HOME} \
---program-suffix=7 && \
-make -j12 && \
-make install
+  cd ${SOURCE_DIR}/gcc-${GCC_VERSION} && \
+  mkdir build && cd build && \
+  ../configure --prefix=${GCC_HOME} \
+  --enable-checking=release \
+  --disable-nls \
+  --enable-host-shared \
+  --enable-compressed-debug-sections=all \
+  --enable-bootstrap \
+  --with-gmp=${GCC_HOME} \
+  --with-mpfr=${GCC_HOME} \
+  --with-mpc=${GCC_HOME} \
+  --enable-languages=c,c++,fortran,lto \
+  --enable-host-shared \
+  --with-isl=${GCC_HOME} \
+  --disable-multilib \
+  --build=x86_64-apple-darwin20.4.0 \
+  --with-native-system-header-dir=/usr/include \
+  --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk \
+  --with-system-zlib && \
+  make -j12 BOOT_LDFLAGS=-Wl,-headerpad_max_install_names && \
+  make install
 ```
 
 
