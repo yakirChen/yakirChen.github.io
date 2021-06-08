@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Build Wget on macOS
 date: 2018/05/06
 tags: [macOS,Tech]

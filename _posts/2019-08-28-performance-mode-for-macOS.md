@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Turn on performance mode for macOS
 date: 2018/11/23
 tags: [PostgreSQL,macOS,Data]

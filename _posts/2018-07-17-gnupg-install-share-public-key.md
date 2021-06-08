@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GnuPG Install And Share Public-Key
 date: 2018/07/17
 tags: [macOS,Tech]

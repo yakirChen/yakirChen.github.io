@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Install MySQL From A Tarball
 date: 2017/11/18
 tags: [MySQL,macOS,Data]

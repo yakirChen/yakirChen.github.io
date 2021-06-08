@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Building GCC 7 on macOS
 date: 2017/09/22
 tags: [GCC,Cpp]

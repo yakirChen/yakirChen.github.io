@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Install PostgreSQL From Binary Tarball
 date: 2018/11/23
 tags: [PostgreSQL,macOS,Data]

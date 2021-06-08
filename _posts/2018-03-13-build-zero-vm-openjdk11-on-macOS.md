@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Build OpenJDK11 Zero VM on macOS (interpreted mode) [待更新]
 date: 2018/03/13
 tags: [Java,JDK,OpenJDK,ZeroVM,Hotspot]

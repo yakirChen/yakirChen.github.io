@@ -1,5 +1,4 @@
 ---
-layout: post
 title: macOS安装器解包
 date: 2017/10/13
 tags: [macOS]

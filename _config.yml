@@ -17,13 +17,25 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: yakir
+title: yakir's note 🍀🌱🌵🐽🐝🐡
 email: iamyakirchen@outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
-  🍀🌱🌵🐽🐝🐡
+description: "🍀🌱🌵🐽🐝🐡"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  yakirChen
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
 
 # Build settings
 markdown: redcarpet #kramdown
@@ -36,24 +48,7 @@ plugins:
   - jekyll-seo-tag
 
 # theme_color: white
-minimal_mistakes_skin: contrast
+minimal_mistakes_skin: sunrise
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+repository: "yakirChen/yakirChen.github.io"
+date_format: "%Y-%m-%d"

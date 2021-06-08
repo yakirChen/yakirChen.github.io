@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Squirrel构建安装(macOS)
 date: 2016/11/20
 tags: [Rime,Squirrel,macOS]
@@ -12,7 +11,7 @@ description: Squirrel构建安装(macOS)
 
 1). **黑色主题**
 
-![](/imgs/squirrel-screenshot/rime_black.png)
+![](/imgs/squirrel-screenshot/rime_black_new.png)
 
 2). **白色主题**
 
@@ -61,12 +60,12 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-# cmake version 3.19.4
+cmake version 3.20.3
 
-# CMake suite maintained and supported by Kitware (kitware.com/cmake).
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-#### boost构建: 更新至`1.75.0`版本
+#### boost构建: 更新至`1.76.0`版本
 
 ```bash
 # export BUILD_UNIVERSAL=1
@@ -126,6 +125,7 @@ cd plum && \
 + **更新2019/12/18. macOS 10.15.2 Squirrel 0.14.0 Boost 1.72.0 CMake 3.16.1**
 + **更新2020/05/13. macOS 10.15.4**
 + **更新2021/02/01. macOS 11.1 Boost 1.75.0 CMake 3.19.4 ARCHS='x86_64'**
++ **更新2021/06/07. macOS 11.4 Boost 1.76.0 CMake 3.20.3 ARCHS='x86_64'**
 
 ---
 

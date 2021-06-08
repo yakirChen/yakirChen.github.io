@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Building GCC 11 on macOS
 date: 2021/05/08
 tags: [GCC,Cpp]

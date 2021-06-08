@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Rust Develop(Learn) Environment (macOS/windows)
 date: 2018/04/08
 tags: [Rust, Cargo, Racer]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Junit 5 Quick Start
 date: 2017/08/07
 tags: [Java,测试,JUnit]

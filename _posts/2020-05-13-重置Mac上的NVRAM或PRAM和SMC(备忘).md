@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 重置Mac上的NVRAM或PRAM和SMC(备忘)
 date: 2020/05/13
 tags: [mac,macOS]

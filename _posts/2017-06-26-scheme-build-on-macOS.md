@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Chez Scheme安装初探(macOS)
 date: 2017/06/26
 tags: [Scheme,Lisp,macOS]
