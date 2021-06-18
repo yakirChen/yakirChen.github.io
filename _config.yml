@@ -12,7 +12,7 @@ navbar-links:
   Blog: "/"
   Hire me: "https://yakirchen.github.io"
   Projects: "projects"
-  About Me / Contact: "aboutme"
+  About Me: "about.markdown"
 
 social-network-links:
   email: "iamyakirchen@outlook.com"
