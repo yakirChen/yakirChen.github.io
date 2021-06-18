@@ -1,54 +1,99 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: yakir's note 🍀🌱🌵🐽🐝🐡
-email: iamyakirchen@outlook.com
-description: "🍀🌱🌵🐽🐝🐡"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  yakirChen
-
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      show_date: true
-
-# Build settings
-markdown: redcarpet #kramdown
-# theme: minima
-# theme: jekyll-swiss
-theme: minimal-mistakes-jekyll
+remote_theme: daattali/beautiful-jekyll
 plugins:
   - jekyll-feed
-  - github-pages
-  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
 
-# theme_color: white
-minimal_mistakes_skin: sunrise
+title: 🍀🌱🌵🐽🐝🐡
+author: yakirChen
 
-repository: "yakirChen/yakirChen.github.io"
-date_format: "%Y-%m-%d"
+
+navbar-links:
+  Blog: "/"
+  Hire me: "https://yakirchen.github.io"
+  Projects: "projects"
+  About Me / Contact: "aboutme"
+
+avatar: "/assets/img/deanimg.jpeg"
+
+social-network-links:
+  email: "iamyakirchen@outlook.com"
+  github: yakirChen
+
+share-links-active:
+  twitter: true
+  facebook: true
+  linkedin: true
+
+excerpt_length: 50
+feed_show_excerpt: false
+feed_show_tags: false
+
+keywords: "r yakir,r java"
+
+link-col: "#404040"
+
+mobile-theme-col: "#0085A1"
+
+site-css: "/assets/css/custom-styles.css"
+site-js: "/assets/js/custom-script.js"
+
+timezone: "Asia/Shanghai"
+permalink: /blog/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
+disqus: "deanattali-site"
+google_analytics: "UA-59820529-1"
+fb_app_id: "536330676521989"
+
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      carbonads: true
+      comments: true
+      social-share: true
+      show-share: true
+      show-subscribe: true
+      support_promo_box: true
+      after-content: [share-section.html, scroll-box.html]
+  -
+    scope:
+      path: "notblog"
+    values:
+      layout: "post"
+      carbonads: true
+      comments: true
+      social-share: true
+      show-share: true
+      show-subscribe: true
+      support_promo_box: true
+      after-content: [share-section.html, scroll-box.html]
+  -
+    scope:
+      path: "pages"
+    values:
+      layout: "page"
+      comments: true
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+      before-content: [support_promo_box.html, carbonads.html]
+      footer-extra: footer-subscribe.html
+
+exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - docs/
+  - files/java/Scrabble/*
