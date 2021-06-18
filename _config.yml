@@ -14,16 +14,9 @@ navbar-links:
   Projects: "projects"
   About Me / Contact: "aboutme"
 
-avatar: "/assets/img/deanimg.jpeg"
-
 social-network-links:
   email: "iamyakirchen@outlook.com"
   github: yakirChen
-
-share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
 
 excerpt_length: 50
 feed_show_excerpt: false
@@ -40,53 +33,8 @@ site-js: "/assets/js/custom-script.js"
 
 timezone: "Asia/Shanghai"
 permalink: /blog/:title/
-paginate: 10
+paginate: 100
 paginate_path: "/page:num/"
-
-disqus: "deanattali-site"
-google_analytics: "UA-59820529-1"
-fb_app_id: "536330676521989"
-
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      carbonads: true
-      comments: true
-      social-share: true
-      show-share: true
-      show-subscribe: true
-      support_promo_box: true
-      after-content: [share-section.html, scroll-box.html]
-  -
-    scope:
-      path: "notblog"
-    values:
-      layout: "post"
-      carbonads: true
-      comments: true
-      social-share: true
-      show-share: true
-      show-subscribe: true
-      support_promo_box: true
-      after-content: [share-section.html, scroll-box.html]
-  -
-    scope:
-      path: "pages"
-    values:
-      layout: "page"
-      comments: true
-  -
-    scope:
-      path: ""
-    values:
-      layout: "page"
-      before-content: [support_promo_box.html, carbonads.html]
-      footer-extra: footer-subscribe.html
 
 exclude:
   - CHANGELOG.md
