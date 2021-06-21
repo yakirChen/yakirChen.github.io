@@ -175,10 +175,10 @@ cd racer && cargo build --release # 编译之后二进制包在 ./target/release
 racer complete std::io::B
 
 # 输出类似信息
-MATCH BufRead,1551,10,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Trait,pub trait BufRead: Read
-MATCH Bytes,2171,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/mod.rs,Struct,pub struct Bytes<R>
-MATCH BufReader,51,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufReader<R>
-MATCH BufWriter,412,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/io/buffered.rs,Struct,pub struct BufWriter<W: Write>
+MATCH BufRead,1943,10,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library/std/src/io/mod.rs,Trait,pub trait BufRead: Read
+MATCH Bytes,2613,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library/std/src/io/mod.rs,Struct,pub struct Bytes<R>
+MATCH BufReader,48,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library/std/src/io/buffered/bufreader.rs,Struct,pub struct BufReader<R>
+MATCH BufWriter,70,11,/Users/yakir/local/rust/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library/std/src/io/buffered/bufwriter.rs,Struct,pub struct BufWriter<W: Write>
 ```
 
 ### 编辑器支持
