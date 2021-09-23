@@ -15,8 +15,8 @@ tags: [Spark,Hive,BigData]
 [Spark 2.4.7](https://mirrors.tuna.tsinghua.edu.cn/apache/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz)
 [Kafka 2.7.0](https://mirrors.tuna.tsinghua.edu.cn/apache/kafka/2.7.0/kafka_2.12-2.7.0.tgz)
 
-
 ### 解压初始化
+
 ```bash
 tar zxf hadoop-2.7.7.tar.gz -C ./
 tar zxf apache-hive-2.3.8-bin.tar.gz -C ./
@@ -70,14 +70,13 @@ nohup  ${KAFKA_HOME}/zookeeper-server-start.sh config/zookeeper.properties >> /V
 !connect jdbc:hive2://yakir.spark:1000
 ```
 
-
 ### Warning
 
 *Unable to load native-hadoop library for your platform... using builtin-java classes where applicable*
+
 ```bash
 mv $HADOOP_HOME/lib/native/* $HADOOP_HOME/lib/
 ```
-
 
 ```bash
 tail -fn 999 /Volumes/sm/repos/bigdata2/hadoop/logs/hadoop-*-namenode-*.log

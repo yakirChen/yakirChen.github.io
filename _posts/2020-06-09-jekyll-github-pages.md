@@ -6,11 +6,10 @@ tags: [Blog,GitHub,Pages,Jekyll]
 
 ---
 
-
 ## reference
+
 - [https://jekyllrb.com/docs/usage/](https://jekyllrb.com/docs/usage/)
 - [https://rubygems.org/gems/github-pages](https://rubygems.org/gems/github-pages)
-
 
 ```bash
 gem install bundler

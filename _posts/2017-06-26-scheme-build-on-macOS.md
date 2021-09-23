@@ -9,19 +9,23 @@ description: Chez Scheme安装初探(macOS)
 
 
 ## 1. 获取代码
+
 ```bash
 git clone --recursive --depth 1 git@github.com:cisco/ChezScheme.git
 gcr1 git@github.com:cisco/ChezScheme.git
 ```
 
 ## 2. 预先配置环境变量
+
 ```bash
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export PATH=$CHEZ_SCHEME_HOME/bin:$PATH
 ```
 
 ## 3. macOS X11问题(10/23/2018 貌似现在木有这个问题)
+
 macOS在没有X11的情况下，在make阶段会报找不到头文件 (摊手
+
 ```bash
 expeditor.c:886:10: fatal error: 'X11/Xlib.h' file not found
 #include <X11/Xlib.h>
@@ -31,6 +35,7 @@ expeditor.c:886:10: fatal error: 'X11/Xlib.h' file not found
 
 解决: 注释引用头文件的代码
 文件路径 `vim +297 ChezScheme/c/version.h`
+
 ```c
 #define LIBX11 "/usr/X11R6/lib/libX11.dylib"
 // 变为
@@ -38,13 +43,15 @@ expeditor.c:886:10: fatal error: 'X11/Xlib.h' file not found
 ```
 
 ## 4. 编译安装
+
 ```bash
 ./configure --installprefix=${CHEZ_SCHEME_HOME}
 make -j 12
 make install
 ```
 
-## 5. 安装校验 
+## 5. 安装校验
+
 ```bash
 # 版本号
 scheme --version
@@ -55,10 +62,10 @@ scheme
 ```
 
 ## 6. 退出
+
 ```scheme
 (exit)
 ```
-
 
 ## 入门文档 (感谢 🤓
 

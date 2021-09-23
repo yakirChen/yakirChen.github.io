@@ -12,8 +12,8 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 
 1. [安装一个 JDK14](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 2. [Autogen](http://www.gnu.org/software/autogen)
-2. [Autoconf](http://www.gnu.org/software/autoconf)
-3. [Python 2](https://www.python.org/)
+3. [Autoconf](http://www.gnu.org/software/autoconf)
+4. [Python 2](https://www.python.org/)
 5. [Libffi](https://github.com/libffi/libffi)
 6. [Freetype](https://www.freetype.org)
 7. [Ccache](https://ccache.samba.org)
@@ -29,6 +29,7 @@ git clone --recurse-submodules --depth 1 https://github.com/openjdk/jdk.git
 ```
 
 ## libffi
+
 ```bash
 git clone --depth 1 git@github.com:libffi/libffi.git
 cd libffi
@@ -39,6 +40,7 @@ cd libffi
 ```
 
 ## 生成Makefile
+
 ```bash
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
@@ -55,9 +57,11 @@ sh ./configure --enable-dtrace \
     --with-num-cores=4 \
     --with-jobs=12
 ```
+
 `--enable-ccache`选项看着加😁
 
 ## `configure` 成功输出
+
 ```bash
 ====================================================
 A new configuration has been successfully created in
@@ -84,10 +88,10 @@ Build performance summary:
 ```
 
 ## Make
+
 ```bash
 make JOBS=12 && make images
 ```
-
 
 ## 验证
 
@@ -105,7 +109,6 @@ javac 15-internal
 ./build/macosx-x86_64-zero-slowdebug/jdk/bin/javac -version  34.24s user 0.60s system 83% cpu 41.767 total
 ```
 
-
 ```bash
 % time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java
 Hello
@@ -113,6 +116,7 @@ Hello
 ```
 
 对比Oracle Java 11
+
 ```bash
 % time java /Volumes/sm/Hello.java
 Hello
@@ -120,6 +124,7 @@ java /Volumes/sm/Hello.java  2.53s user 0.16s system 177% cpu 1.515 total
 ```
 
 对比OpenJDK Java 15
+
 ```bash
 % time java /Volumes/sm/Hello.java
 Hello
@@ -127,7 +132,6 @@ java /Volumes/sm/Hello.java  1.12s user 0.15s system 150% cpu 0.848 total
 ```
 
 Oracle Java 11 快太多
-
 
 ```java
 // Hello.java

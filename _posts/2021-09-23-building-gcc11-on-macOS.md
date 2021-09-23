@@ -1,7 +1,7 @@
 ---
 title: Building GCC 11 on macOS
-date: 2021/05/08
-tags: [GCC,Cpp]
+date: 2021/09/23
+tags: [GCC,cpp]
 categories: [Tech]
 toc: true
 description: Building GCC 11 on macOS
@@ -11,11 +11,11 @@ description: Building GCC 11 on macOS
 
 macOS Big Sur
 
-OS: macOS 11.3.1 20E241 x86_64 
-Host: MacBookPro15,1 
-Kernel: 20.4.0 
+OS: macOS 11.6 20G165 x86_64
+Host: MacBookPro15,1
+Kernel: 20.6.0
 
-构建 GCC 11
+构建 GCC 11.2.0
 
 ## macOS命令行工具
 
@@ -26,8 +26,9 @@ xcode-select --install
 ## GCC套件和依赖
 
 ## 源包Download
-+ [GCC源码安装包](https://bigsearcher.com/mirrors/gcc/releases/)
-  [点击下载`gcc-11.1.0.tar.gz`](https://bigsearcher.com/mirrors/gcc/releases/gcc-11.1.0/gcc-11.1.0.tar.xz)
+
++ [GCC源码安装包](https://bigsearcher.com/mirrors/gcc/releases)
+  [点击下载`gcc-11.2.0.tar.xz`](https://bigsearcher.com/mirrors/gcc/releases/gcc-11.2.0/gcc-11.2.0.tar.xz)
 
 + [依赖包mpc](http://www.multiprecision.org/mpc/download.html)
   [点击下载`mpc-1.0.3.tar.gz`](ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz)
@@ -46,7 +47,7 @@ xcode-select --install
 ```bash
 export SOURCE_DIR=/Volumes/sm/build/gcc11
 export GCC_HOME=/Users/yakir/local/gcc
-export GCC_VERSION="11.1.0"
+export GCC_VERSION="11.2.0"
 export GMP_VERSION="6.1.2"
 export MPFR_VERSION="3.1.6"
 export MPC_VERSION="1.0.3"
@@ -59,7 +60,8 @@ cd ${SOURCE_DIR}/gmp-${GMP_VERSION} && \
 mkdir build && cd build && \
   ../configure --prefix=${GCC_HOME} --enable-cxx && \
   make -j4 && \
-  make install
+  make install && \
+  cd ../../
 
 # mpfr
 tar -zxvf mpfr-${MPFR_VERSION}.tar.gz && \
@@ -67,7 +69,8 @@ cd ${SOURCE_DIR}/mpfr-${MPFR_VERSION} && \
 mkdir build && cd build && \
   ../configure --prefix=${GCC_HOME} --with-gmp=${GCC_HOME} && \
   make -j4 && \
-  make install
+  make install && \
+  cd ../../
 
 # mpc
 tar -zxvf mpc-${MPC_VERSION}.tar.gz && \
@@ -77,7 +80,8 @@ mkdir build && cd build && \
   --with-gmp=${GCC_HOME} \
   --with-mpfr=${GCC_HOME} && \
   make -j4 && \
-  make install
+  make install && \
+  cd ../../
 
 # isl
 tar -jxvf isl-${ISL_VERSION}.tar.bz2 && \
@@ -85,7 +89,8 @@ tar -jxvf isl-${ISL_VERSION}.tar.bz2 && \
   mkdir build && cd build && \
   ../configure --prefix=${GCC_HOME} --with-gmp-prefix=${GCC_HOME} && \
   make -j4 && \
-  make install
+  make install && \
+  cd ../../
 
 # gcc
 tar -Jxvf gcc-${GCC_VERSION}.tar.xz && \
@@ -104,7 +109,7 @@ tar -Jxvf gcc-${GCC_VERSION}.tar.xz && \
   --enable-host-shared \
   --with-isl=${GCC_HOME} \
   --disable-multilib \
-  --build=x86_64-apple-darwin20.4.0 \
+  --build=x86_64-apple-darwin20.6.0 \
   --with-native-system-header-dir=/usr/include \
   --with-sysroot=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk \
   --with-system-zlib && \
@@ -121,7 +126,6 @@ tar -Jxvf gcc-${GCC_VERSION}.tar.xz && \
 export GCC_HOME=$SERVER_BASE_HOME/gcc
 PATH=${GCC_HOME}/bin:$PATH
 ```
-
 
 ## g++测试
 
@@ -143,10 +147,10 @@ Copyright © 2017 Free Software Foundation, Inc.
 #include <iostream>
 using namespace std;
 int main(){
-	for (int i = 0; i < 5; ++i){
-		cout << "Hello GCC 7.3 ! count " << i << endl;
-	}
-  	return 0;
+    for (int i = 0; i < 5; ++i){
+        cout << "Hello GCC 7.3 ! count " << i << endl;
+    }
+    return 0;
 }
 /* 编译 & 运行 & 输出
 % g++7 test.cpp -o test
@@ -160,7 +164,7 @@ Hello GCC 7.3 ! count 4*/
 
 ##### change_log
 
-- Upgrade gcc 7.3
+- Upgrade gcc 11.2
 
 ___
 

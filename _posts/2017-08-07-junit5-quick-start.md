@@ -15,7 +15,7 @@ description: Junit 5 Quick Start
 
 ## Quick Start
 
-###  Maven依赖配置_摘录_
+### Maven依赖配置_摘录_
 
 ```xml
 <properties>
@@ -188,6 +188,7 @@ class Test_LangString {
 ```
 
 IDE运行输出
+
 ```bash
 在所有测试方法运行之前执行的方法
 在每个测试方法运行之前执行的方法
@@ -206,7 +207,7 @@ void test.Test_LangString.donothing() is @Disabled
 
 ### Maven集成
 
-**添加依赖**
+添加依赖
 
 ```xml
 <properties>

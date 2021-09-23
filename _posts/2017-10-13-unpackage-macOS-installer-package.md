@@ -16,15 +16,19 @@ description: macOS安装器解包
 ### 1. 挂载dmg镜像
 
 ### 2. 创建个目录用来存放解包之后的文件
+
 ```bash
 mkdir pkg && cd pkg
 ```
 
 ### 3. 解包
+
 ```bash
 xar -xf /Volumes/Java\ for\ OS\ X\ 2015-001/JavaForOSX.pkg
 ```
+
 得到一个文件和四个目录，需要关注的是`JavaForOSX.pkg`这个目录
+
 ```
 Distribution
 JavaEssentials.pkg
@@ -34,19 +38,25 @@ Resources
 ```
 
 ### 4. 获得需要的资源
+
 解包Payload文件
+
 ```bash
 tar zxvf JavaForOSX.pkg/Payload\ Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents \
     -C ./
 ```
+
 在当前目录生成资源文件目录结构是`Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents`,`Contents`包含的内容就是JAVA_HOME,  
+
 ```bash
 # 执行拷贝
 cp -R Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents ${LOCAL}/jdk6
 ```
+
 之后就可以得到JDK6
 
 ### 5. 环境变量
+
 配置环境变量的时候需要将`JAVA_6_HOME`指向`${LOCAL}/jdk6/Home`目录
 
 ```bash
@@ -57,13 +67,13 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 ```
 
 ### by the way
+
 无意中发现一款app `SuspiciousPackage`可以把这些个步骤可视化。  
 打开app ›『File』› 『Open』› 选中镜像中的`JavaForOSX.pkg` › 选中 **`All Files`**tab浏览文件 › 选中`Contents` ›『File』› 『Export "Contents"』
 
 _最后两步导出动作可由快捷键 『Shift+Commond+E』触发_
 
-
---- 
+---
 
 参考链接
 

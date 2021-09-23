@@ -10,6 +10,7 @@ description: Install MySQL From A Tarball
 ## macOS
 
 ### 安装前环境变量配置
+
 ```bash
 export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
 export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
@@ -19,6 +20,7 @@ export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
 ```
 
 ### 初始化
+
 ```bash
 mkdir -p ${MYSQL_LOGS_DIR}
 mkdir /Volumes/sm/repos/mysql/tmpdir
@@ -32,11 +34,13 @@ mysqld --initialize \
 ```
 
 ### 获取初始登录密码
+
 ```bash
 cat ${MYSQL_LOGS_DIR}/error.log
 ```
 
 ### 启动服务
+
 ```bash
 mysqld --user=yakir \
 	--basedir=${MYSQL_BASE_DIR} \
@@ -53,11 +57,13 @@ mysqld --user=yakir \
 ```
 
 ### 安全配置向导(optional)
+
 ```shell
 ./mysql_secure_installation --socket=${MYSQL_COMMON_DIR}/mysql.sock
 ```
 
 ### 登录MySQL进行用户初始化
+
 ```bash
 mysql -uroot -p --socket=${MYSQL_COMMON_DIR}/mysql.sock
 # 输入之前从日志中获取的初始密码
@@ -78,14 +84,14 @@ FLUSH PRIVILEGES;
 ```
 
 ### 关闭MySQL服务
+
 ```bash
 mysqladmin shutdown --socket=${MYSQL_COMMON_DIR}/mysql.sock -uroot -p
 ```
 
-
 ## Debian
 
-*以下操作都是使用系统root用户*
+_以下操作都是使用系统root用户_
 
 ### 安装前环境变量配置
 
@@ -97,12 +103,14 @@ MYSQL_LOGS_DIR='/data/store/logs/mysql'
 ```
 
 ### 依赖包check
+
 ```bash
 apt-cache search libaio1
 apt-get install libaio1 
 ```
 
 ### 系统配置
+
 ```bash
 # 添加用户组
 groupadd mysql 
@@ -119,6 +127,7 @@ chgrp -R mysql ${MYSQL_DATA_DIR}
 ```
 
 ### 初始化
+
 ```bash
 /data/mysql/bin/mysqld --initialize \
         --user=mysql \

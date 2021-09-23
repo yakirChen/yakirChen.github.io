@@ -13,6 +13,7 @@ description: Install PostgreSQL From Binary Tarball
 [enterprisedb postgresql binaries](https://www.enterprisedb.com/download-postgresql-binaries)
 
 ## 初始化
+
 ```bash
 export PGSOCKET=/Volumes/sm/repos/pgsql
 export PGDATA=/Volumes/sm/repos/pgsql/data
@@ -35,24 +36,29 @@ export PGCTLLOG=/Volumes/sm/repos/pgsql/pgctllog.log
 ~~```~~
 
 ## 启动服务
+
 ```bash
 ./pg_ctl -D ${PGDATA} -l ${PGLOG} start
 ```
 
 ## 关闭服务
+
 ```bash
 ./pg_ctl -D ${PGDATA} -l ${PGLOG} stop
 ```
 
 ## 命令行客户端连接
+
 ```bash
 ./psql -U yakir -L ${PGCTLLOG} -d postgres
 # ./psql -U yakir -L ${PGCTLLOG} -h ${PGSOCKET} -d postgres
 ```
 
 ## pgAdmin
+
 日志: `~/.pgadmin/pgadmin4.log`
 配置文件; `pgAdmin.app/web/config_local.py`
+
 ```properties
 import logging
 
@@ -76,6 +82,7 @@ LOG_FILE = '/desired/path/to/pgadmin4.log'
 ```
 
 ## 创建database
+
 ```bash
 CREATE DATABASE book_postgre WITH OWNER = yakir 
    ENCODING = 'UTF8' 

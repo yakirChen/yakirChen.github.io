@@ -7,6 +7,7 @@ categories: [Tech]
 
 
 ### 获得源码
+
 ```bash
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
@@ -23,8 +24,6 @@ gclient config https://github.com/v8/v8.git
 gclient sync
 ```
 
-
-
-##### Reference
+#### Reference
 
 [depot_tools_tutorial(7) Manual Page](https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up)

@@ -20,6 +20,7 @@ xcode-select --install
 ## GCC套件和依赖
 
 ## 源包Download
+
 + [GCC源码安装包](http://mirrors.ustc.edu.cn/gnu/gcc/)
   [点击下载`gcc-7.3.0.tar.gz`](http://mirrors.ustc.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz)
 
@@ -101,7 +102,6 @@ make -j4 && \
 make install
 ```
 
-
 ## GCC套件环境变量配置
 
 配置环境变量
@@ -110,7 +110,6 @@ make install
 export GCC_HOME=$SERVER_BASE_HOME/gcc
 PATH=${GCC_HOME}/bin:$PATH
 ```
-
 
 ## g++测试
 
@@ -132,10 +131,10 @@ Copyright © 2017 Free Software Foundation, Inc.
 #include <iostream>
 using namespace std;
 int main(){
-	for (int i = 0; i < 5; ++i){
-		cout << "Hello GCC 7.3 ! count " << i << endl;
-	}
-  	return 0;
+    for (int i = 0; i < 5; ++i){
+        cout << "Hello GCC 7.3 ! count " << i << endl;
+    }
+    return 0;
 }
 /* 编译 & 运行 & 输出
 % g++7 test.cpp -o test
@@ -147,9 +146,9 @@ Hello GCC 7.3 ! count 3
 Hello GCC 7.3 ! count 4*/
 ```
 
-##### change_log
+### change_log
 
-- Upgrade gcc 7.3
+1. Upgrade gcc 7.3
 
 ___
 

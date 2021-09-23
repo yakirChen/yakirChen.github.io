@@ -7,11 +7,10 @@ toc: true
 description: macOS 开启性能模式
 ---
 
-
 ## 引用
-+ [Turn on performance mode for macOS Server](https://support.apple.com/en-us/HT202528)
-+ [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
 
+- [Turn on performance mode for macOS Server](https://support.apple.com/en-us/HT202528)
+- [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
 
 ## 重置NVRAM
 
@@ -26,20 +25,23 @@ Option + Command + P + R
 ```shell
 nvram boot-args
 ```
+
 boot-args NVRAM 变量。如果您看到 serverperfmode=1，则说明性能模式已开启
 
-
 开启高性能模式
+
 ```shell
 sudo nvram boot-args="serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)"
 ```
 
 关闭高性能模式
+
 ```shell
 sudo nvram boot-args="$(nvram boot-args 2>/dev/null | sed -e $'s/boot-args\t//;s/serverperfmode=1//')"
 ```
 
 `sysctl -a`查看的大致不同
+
 ```properties
 kern.maxvnodes: 263168
 kern.maxproc: 4256
