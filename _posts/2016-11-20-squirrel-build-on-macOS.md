@@ -11,7 +11,7 @@ description: Squirrel构建安装(macOS)
 
 1). **黑色主题**
 
-![rime_black_new.png](/imgs/squirrel-screenshot/rime_black.png)
+![rime_black_new.png](/imgs/squirrel-screenshot/rime_black_new.png)
 
 2). **白色主题**
 
