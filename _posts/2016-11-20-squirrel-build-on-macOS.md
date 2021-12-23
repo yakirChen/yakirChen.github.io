@@ -11,7 +11,7 @@ description: Squirrel构建安装(macOS)
 
 1). **黑色主题**
 
-![rime_black_new.png](/imgs/squirrel-screenshot/rime_black_new.png)
+![rime_black_new.png](/imgs/squirrel-screenshot/rime_black.png)
 
 2). **白色主题**
 
@@ -128,6 +128,7 @@ cd plum && \
 - **更新2021/02/01. macOS 11.1 Boost 1.75.0 CMake 3.19.4 ARCHS='x86_64'**
 - **更新2021/06/07. macOS 11.4 Boost 1.76.0 CMake 3.20.3 ARCHS='x86_64'**
 - **更新2021/09/23. macOS 11.6 Boost 1.77.0 CMake 3.21.3 ARCHS='x86_64'**
+- **更新2021/10/20. macOS 12.0.1 ARCHS='x86_64'**
 
 ---
 
