@@ -71,7 +71,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 无意中发现一款app `SuspiciousPackage`可以把这些个步骤可视化。  
 打开app ›『File』› 『Open』› 选中镜像中的`JavaForOSX.pkg` › 选中 **`All Files`**tab浏览文件 › 选中`Contents` ›『File』› 『Export "Contents"』
 
-_最后两步导出动作可由快捷键 『Shift+Commond+E』触发_
+_**最后两步导出动作可由快捷键 『Shift+Commond+E』触发**_
 
 ---
 

@@ -91,7 +91,7 @@ mysqladmin shutdown --socket=${MYSQL_COMMON_DIR}/mysql.sock -uroot -p
 
 ## Debian
 
-_以下操作都是使用系统root用户_
+  _以下操作都是使用系统root用户_
 
 ### 安装前环境变量配置
 
