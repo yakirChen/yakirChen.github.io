@@ -16,12 +16,11 @@ tags: [nginx,http2,http,h2,grpc]
 ## 执行安装
 
 ```bash
-export NGINX=/Users/yakir/local/nginx
-
-./configure --prefix=${NGINX} \
-    --sbin-path=${NGINX}/nginx \
-    --conf-path=${NGINX}/nginx.conf \
-    --pid-path=${NGINX}/nginx.pid \
+export NGINX_HOME=/Users/yakir/local/nginx
+./configure --prefix=${NGINX_HOME} \
+    --sbin-path=${NGINX_HOME}/nginx \
+    --conf-path=${NGINX_HOME}/nginx.conf \
+    --pid-path=${NGINX_HOME}/nginx.pid \
     --with-threads \
     --with-stream \
     --with-http_v2_module \
@@ -30,15 +29,17 @@ export NGINX=/Users/yakir/local/nginx
     --with-pcre-jit \
     --with-http_addition_module \
     --with-http_auth_request_module \
-    --http-log-path=/Volumes/sm/logs/nginx/access.log \
-    --error-log-path=/Volumes/sm/logs/nginx/error.log \
-    --lock-path=/Volumes/sm/logs/nginx/nginx.lock \
+    --http-log-path=${NGINX_HOME}/access.log \
+    --error-log-path=${NGINX_HOME}/error.log \
+    --lock-path=${NGINX_HOME}/nginx.lock \
     --with-http_stub_status_module \
     --with-http_realip_module \
+    --with-http_auth_request_module \
+    --without-http_grpc_module \
     --with-debug \
-    --with-pcre=./pcre-8.43 \
-    --with-zlib=./zlib-1.2.11 \
-    --with-openssl=./libressl-3.2.0 && \
+    --with-pcre=../pcre2-10.39 \
+    --with-zlib=../zlib-1.2.11 \
+    --with-openssl=../libressl-3.5.0 && \
     make -j 12 && make install
 ```
 
@@ -46,7 +47,7 @@ export NGINX=/Users/yakir/local/nginx
 
 ```bash
 % $NGINX/nginx -v 
-nginx version: nginx/1.19.1
+nginx version: nginx/1.21.6
 ```
 
 ## Nginx 自签名证书
