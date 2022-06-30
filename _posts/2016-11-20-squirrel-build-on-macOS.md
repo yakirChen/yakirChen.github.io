@@ -59,7 +59,7 @@ cd CMake && mkdir build && cd build && \
 cmake --version
 
 # 输出: 
-cmake version 3.23.1
+cmake version 3.23.2
 
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
@@ -136,7 +136,7 @@ cd plum && \
 - **更新2021/06/07. macOS 11.4 Boost 1.76.0 CMake 3.20.3 ARCHS='x86_64'**
 - **更新2021/09/23. macOS 11.6 Boost 1.77.0 CMake 3.21.3 ARCHS='x86_64'**
 - **更新2021/10/20. macOS 12.0.1 ARCHS='x86_64'**
-- **更新2022/05/23. macOS 12.4 Boost 1.79.0 CMake 3.23.1 ARCHS='x86_64' HEAD[f4d7210]**
+- **更新2022/06/30. macOS 12.4 Boost 1.79.0 CMake 3.23.2 ARCHS='x86_64' HEAD[f4d7210]**
 
 ---
 
