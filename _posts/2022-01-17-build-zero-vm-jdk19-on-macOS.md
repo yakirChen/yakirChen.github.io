@@ -46,7 +46,7 @@ cd libffi
 ```shell
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
-    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/ \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ \
     --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin \
     --disable-warnings-as-errors \
     --with-boot-jdk-jvmargs="-XX:+UseG1GC -Xms8G -Xmx8G" \
@@ -65,7 +65,7 @@ sh ./configure --enable-dtrace \
 ```bash
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
-    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/ \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ \
     --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin \
     --disable-warnings-as-errors \
     --with-boot-jdk-jvmargs="-XX:+UseG1GC -Xms8G -Xmx8G" \
@@ -87,22 +87,24 @@ sh ./configure --enable-dtrace \
 ====================================================
 A new configuration has been successfully created in
 /Volumes/sm/github/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
 
 Configuration summary:
 * Name:           macosx-x86_64-zero-slowdebug
 * Debug level:    slowdebug
 * HS debug level: debug
 * JVM variants:   zero
-* JVM features:   zero: 'dtrace epsilongc g1gc jni-check jvmti management nmt parallelgc serialgc services shenandoahgc vm-structs zero' 
+* JVM features:   zero: 'dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero' 
 * OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
-* Version string: 19-internal+0-adhoc.yakir.jdkbuild (19-internal)
+* Version string: 20-internal-adhoc.yakir.jdkbuild (20-internal)
+* Source date:    Determined at build time
 
 Tools summary:
-* Boot JDK:       java version "17.0.1" 2021-10-19 LTS Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39) Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home)
-* Toolchain:      clang (clang/LLVM from Xcode 13.2.1)
-* C Compiler:     Version 13.0.0 (at /usr/bin/clang)
-* C++ Compiler:   Version 13.0.0 (at /usr/bin/clang++)
+* Boot JDK:       openjdk version "19-ea" 2022-09-20 OpenJDK Runtime Environment (build 19-ea+30-2169) OpenJDK 64-Bit Server VM (build 19-ea+30-2169, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home)
+* Toolchain:      clang (clang/LLVM from Xcode 13.4.1)
+* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+* C Compiler:     Version 13.1.6 (at /usr/bin/clang)
+* C++ Compiler:   Version 13.1.6 (at /usr/bin/clang++)
 
 Build performance summary:
 * Build jobs:     12
@@ -148,46 +150,41 @@ WARNING: libffi not used, so --with-libffi[-*] is ignored
 ```bash
 make JOBS=12 all && make images
 
-# 增量编译hotspot
+# 增量编译
 make hotspot
+make java.desktop
+make jdk.compiler
 ```
 
 ## 验证(进`build`目录)
 
 ```shell
-% time /Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/java -version 
-openjdk version "17-internal" 2021-09-14
-OpenJDK Runtime Environment (slowdebug build 17-internal+0-adhoc.yakir.jdkbuild)
-OpenJDK 64-Bit Zero VM (slowdebug build 17-internal+0-adhoc.yakir.jdkbuild, interpreted mode)
-/Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/java -version  0.61s user 0.02s system 22% cpu 2.800 total
+% time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version
+openjdk version "20-internal" 2023-03-21
+OpenJDK Runtime Environment (slowdebug build 20-internal-adhoc.yakir.jdkbuild)
+OpenJDK 64-Bit Zero VM (slowdebug build 20-internal-adhoc.yakir.jdkbuild, interpreted mode)
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version  3.56s user 0.06s system 98% cpu 3.657 total
 ```
 
 ```shell
-% time /Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/javac -version 
-javac 17-internal
-/Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/javac -version  3.71s user 0.04s system 99% cpu 3.766 total
+% time /Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java -version
+java version "17.0.3.1" 2022-04-22 LTS
+Java(TM) SE Runtime Environment (build 17.0.3.1+2-LTS-6)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.3.1+2-LTS-6, mixed mode, sharing)
+/Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java   0.03s user 0.04s system 46% cpu 0.145 total
 ```
 
 ```shell
-% time /Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/java /Volumes/sm/Hello.java 
-Hello
-/Users/yakir/local/jdk/jdk-17.jdk/Contents/Home/bin/java   20.35s user 0.10s system 99% cpu 20.497 total
-```
-
-对比Oracle Java 11
-
-```shell
-% time java /Volumes/sm/Hello.java 
-Hello
-java /Volumes/sm/Hello.java  1.00s user 0.12s system 108% cpu 1.032 total
+% time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java 
+Hello World
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java  34.20s user 0.69s system 98% cpu 35.345 total
 ```
 
 对比OpenJDK Java 17
-
 ```shell
-% time java /Volumes/sm/Hello.java 
-Hello
-java /Volumes/sm/Hello.java  0.89s user 0.07s system 219% cpu 0.439 total
+% time /Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java /Volumes/sm/Hello.java 
+Hello World
+/Library/Java/JavaVirtualMachines/jdk-17.0.3.1.jdk/Contents/Home/bin/java   0.65s user 0.05s system 182% cpu 0.386 total
 ```
 
 ```java
