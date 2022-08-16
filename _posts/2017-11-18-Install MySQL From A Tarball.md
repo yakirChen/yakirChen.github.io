@@ -25,7 +25,7 @@ export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
 mkdir -p ${MYSQL_LOGS_DIR}
 mkdir /Volumes/sm/repos/mysql/tmpdir
 mysqld --initialize \
-	--user=yakir \
+	--user=${USERNAME} \
 	--basedir=${MYSQL_BASE_DIR} \
 	--datadir=${MYSQL_DATA_DIR} \
 	--log-error=${MYSQL_LOGS_DIR}/error.log \
@@ -42,7 +42,7 @@ cat ${MYSQL_LOGS_DIR}/error.log
 ### 启动服务
 
 ```bash
-mysqld --user=yakir \
+mysqld --user=${USERNAME} \
 	--basedir=${MYSQL_BASE_DIR} \
 	--datadir=${MYSQL_DATA_DIR} \
 	--log-error=${MYSQL_LOGS_DIR}/error.log \
