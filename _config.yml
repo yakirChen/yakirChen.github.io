@@ -14,6 +14,7 @@ navbar-links:
   About Me: "about"
 
 avatar: "favicon.ico"
+round-avatar: true
 
 social-network-links:
   email: "iamyakirchen@outlook.com"
@@ -33,9 +34,14 @@ site-css: "/assets/css/custom-styles.css"
 site-js: "/assets/js/custom-script.js"
 
 timezone: "Asia/Shanghai"
-permalink: "/blog/:title/"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year-:month-:day-:title/
 paginate: 100
 paginate_path: "/page:num/"
+
+kramdown:
+  input: GFM
 
 exclude:
   - CHANGELOG.md
@@ -46,3 +52,7 @@ exclude:
   - README.md
   - docs/
   - files/java/Scrabble/*
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
