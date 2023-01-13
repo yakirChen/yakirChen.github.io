@@ -1,4 +1,4 @@
-remote_theme: daattali/beautiful-jekyll
+remote_theme: daattali/beautiful-jekyll@5.0.0
 plugins:
   - jekyll-feed
   - jekyll-paginate
@@ -31,7 +31,7 @@ site-css: "/assets/css/custom-styles.css"
 site-js: "/assets/js/custom-script.js"
 
 timezone: "Asia/Shanghai"
-permalink: /blog/:title/
+permalink: "/blog/:title/"
 paginate: 100
 paginate_path: "/page:num/"
 
