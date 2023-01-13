@@ -13,6 +13,8 @@ navbar-links:
   Projects: "projects"
   About Me: "about"
 
+avatar: "favicon.ico"
+
 social-network-links:
   email: "iamyakirchen@outlook.com"
   github: yakirChen
