@@ -18,7 +18,7 @@ mkdir depot_tools && \
     git fetch --all && \
     git checkout master
     
-export PATH=$PATH:/Volumes/Toshiba/dev/tools/depot_tools
+export PATH=$PATH:/Volumes/sm/dev/tools/depot_tools
 export DEPOT_TOOLS_UPDATE=0
 gclient config https://github.com/v8/v8.git
 gclient sync

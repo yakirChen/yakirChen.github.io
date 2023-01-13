@@ -11,7 +11,7 @@ description: Install Facebook's Static Code Analysis Tool (Infer)
 
 ### 预备
 安装 **OCaml**环境, 我用 **OPAM**. 使用 **OPAM** 的原因当然是多版本管理啦😁,
-我在安装前预先配置一个环境变量 `export OPAMROOT=/Volumes/sd/repos/opam`, 用于
+我在安装前预先配置一个环境变量 `export OPAMROOT=/Volumes/sm/repos/opam`, 用于
 存放`OPAM`安装的包、配置 ...  
 
 安装 **darcs**(看介绍是个版本管理工具😑)

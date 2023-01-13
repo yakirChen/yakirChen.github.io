@@ -39,7 +39,7 @@ xcode-select --install
 ## Unpackage & Building
 
 ```bash
-export SOURCE_DIR=/Volumes/Toshiba/Developer/tools_source_dir
+export SOURCE_DIR=/Volumes/sm/Developer/tools_source_dir
 export GCC_HOME=/Users/yakir/Developer/server/gcc
 export GCC_VERSION="7.3.0"
 export GMP_VERSION="6.1.2"

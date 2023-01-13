@@ -77,7 +77,7 @@ bash ../configure --with-debug-level=slowdebug \
   configure: Found freetype include files at /Users/yakir/local/include/freetype2 using --with-freetype
   configure: Could not find ~/local/lib/libfreetype.dylib. Ignoring location.
   configure: error: Can not find or use freetype at location given by --with-freetype
-  /Volumes/Toshiba/Developer/jdk/jdk9u/common/autoconf/generated-configure.sh: line 82: 5: Bad file descriptor
+  /Volumes/sm/Developer/jdk/jdk9u/common/autoconf/generated-configure.sh: line 82: 5: Bad file descriptor
   configure exiting with result code 1
   ```
 
@@ -88,7 +88,7 @@ bash ../configure --with-debug-level=slowdebug \
   Building target 'all' in configuration 'macosx-x86_64-normal-zero-slowdebug'
   Compiling 8 files for BUILD_TOOLS_LANGTOOLS
   Compiling 2 files for BUILD_JVMTI_TOOLS
-  make[3]: *** No rule to make target '/Volumes/sd/Developer/jdk9u/jdk/src/java.base/macosx/conf/zero/jvm.cfg', needed by '/Volumes/sd/Developer/jdk9u/build/macosx-x86_64-normal-zero-slowdebug/support/modules_libs/java.base/jvm.cfg'.  Stop.
+  make[3]: *** No rule to make target '/Volumes/sm/Developer/jdk9u/jdk/src/java.base/macosx/conf/zero/jvm.cfg', needed by '/Volumes/sm/Developer/jdk9u/build/macosx-x86_64-normal-zero-slowdebug/support/modules_libs/java.base/jvm.cfg'.  Stop.
   make[3]: *** Waiting for unfinished jobs....
   make[2]: *** [java.base-copy-jdk] Error 2
   make[2]: *** Waiting for unfinished jobs....
@@ -112,11 +112,11 @@ bash ../configure --with-debug-level=slowdebug \
 + Error NO. 3
   ```bash
   * For target hotspot_variant-zero_libjvm_objs_virtualspace.o:
-  /Volumes/Toshiba/Developer/jdk/jdk9u/hotspot/src/share/vm/memory/virtualspace.cpp:584:14: error: ordered comparison between pointer and zero ('char *' and 'int')
+  /Volumes/sm/Developer/jdk/jdk9u/hotspot/src/share/vm/memory/virtualspace.cpp:584:14: error: ordered comparison between pointer and zero ('char *' and 'int')
     if (base() > 0) {
         ~~~~~~ ^ ~
   1 error generated.
-  * All command lines available in /Volumes/Toshiba/Developer/jdk/jdk9u/build/macosx-x86_64-normal-zero-slowdebug/make-support/failure-logs.
+  * All command lines available in /Volumes/sm/Developer/jdk/jdk9u/build/macosx-x86_64-normal-zero-slowdebug/make-support/failure-logs.
   ```
 
   修改
