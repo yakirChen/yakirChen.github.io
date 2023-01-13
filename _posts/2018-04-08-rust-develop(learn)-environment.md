@@ -49,7 +49,7 @@ rustup-init.exe --no-modify-path --default-toolchain nightly  -y
 添加`oh-my-zsh`插件  
 
 ```shell
-rustup completions zsh > /Users/yakir/.oh-my-zsh/custom/plugins/rustup/_rustup
+rustup completions zsh > /Users/yakir/.ohmyzsh/custom/plugins/rustup/_rustup
 # 在 ~/.zshrc 的plugins列表中添加 `rustup`
 ```
 
