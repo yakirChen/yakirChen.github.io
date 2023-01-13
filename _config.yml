@@ -20,6 +20,7 @@ social-network-links:
   email: "iamyakirchen@outlook.com"
   github: yakirChen
 
+post_search: true
 excerpt_length: 50
 feed_show_excerpt: false
 feed_show_tags: false
@@ -36,7 +37,7 @@ site-js: "/assets/js/custom-script.js"
 timezone: "Asia/Shanghai"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: /blog/:title/
 paginate: 100
 paginate_path: "/page:num/"
 
