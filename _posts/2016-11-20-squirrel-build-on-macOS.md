@@ -71,13 +71,14 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
     make && make install
 ```
 
-#### boost构建: 更新至`1.80.0`版本
+#### boost构建: 更新至`1.81.0`版本
 
 ```bash
+brew install icu4c
 # export BUILD_UNIVERSAL=1
 # 引入环境变量 
 export BOOST_ROOT=/Volumes/sm/servers/boost
-./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all && \
+./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all --with-icu=$BREW_OPT/icu4c && \
     ./b2 headers && \
     ./b2 -j12 --prefix=${BOOST_ROOT} install # 默认安装在/usr/local目录下 
 ```
