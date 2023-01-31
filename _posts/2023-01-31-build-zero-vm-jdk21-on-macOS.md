@@ -1,7 +1,7 @@
 ---
 
-title: Build OpenJDK 19 Zero VM on macOS (interpreted mode)
-date: 2022/01/17
+title: Build OpenJDK 21 Zero VM on macOS (interpreted mode)
+date: 2023/01/31
 tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 
 ---
@@ -17,8 +17,8 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 5. [Libffi](https://github.com/libffi/libffi)
 6. [Freetype](https://www.freetype.org)
 7. [Ccache](https://ccache.samba.org)
-8. [XCode Version 13.2.1 (13C100) macOS Version 12.1 (21C52)](https://developer.apple.com/download/more/)
-9. [Binutils]( https://ftp.gnu.org/gnu/binutils/)
+8. [XCode Version 14.2 (14C18) macOS Version 12.6.3 (21G419)](https://developer.apple.com/download/more/)
+9. [Binutils](https://ftp.gnu.org/gnu/binutils/)
 
 [👉🏼 依赖安装](https://github.com/yakirChen/macOS-libs/blob/master/build.md)
 
@@ -46,7 +46,7 @@ cd libffi
 ```shell
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
-    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk//Contents/Home/ \
     --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin \
     --disable-warnings-as-errors \
     --with-boot-jdk-jvmargs="-XX:+UseG1GC -Xms8G -Xmx8G" \
@@ -54,6 +54,8 @@ sh ./configure --enable-dtrace \
     --with-debug-level=slowdebug \
     --with-native-debug-symbols=internal \
     --with-jvm-variants=zero \
+    --with-hsdis=binutils \
+    --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.37 \
     --with-target-bits=64 \
     --with-libffi=/Users/yakir/local/brew/opt/libffi \
     --with-num-cores=12 \
@@ -73,6 +75,8 @@ sh ./configure --enable-dtrace \
     --with-debug-level=slowdebug \
     --with-native-debug-symbols=internal \
     --with-jvm-variants=server,client \
+    --with-hsdis=binutils \
+    --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.37 \
     --with-target-bits=64 \
     --with-libffi=/Users/yakir/local/brew/opt/libffi \
     --with-num-cores=12 \
@@ -87,24 +91,24 @@ sh ./configure --enable-dtrace \
 ====================================================
 A new configuration has been successfully created in
 /Volumes/sm/github/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk//Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
 
 Configuration summary:
 * Name:           macosx-x86_64-zero-slowdebug
 * Debug level:    slowdebug
 * HS debug level: debug
 * JVM variants:   zero
-* JVM features:   zero: 'dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero' 
+* JVM features:   zero: 'cds dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero' 
 * OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
-* Version string: 20-internal-adhoc.yakir.jdkbuild (20-internal)
-* Source date:    Determined at build time
+* Version string: 21-internal-adhoc.yakir.jdkbuild (21-internal)
+* Source date:    1675148620 (2023-01-31T07:03:40Z)
 
 Tools summary:
-* Boot JDK:       openjdk version "19-ea" 2022-09-20 OpenJDK Runtime Environment (build 19-ea+30-2169) OpenJDK 64-Bit Server VM (build 19-ea+30-2169, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home)
-* Toolchain:      clang (clang/LLVM from Xcode 13.4.1)
-* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
-* C Compiler:     Version 13.1.6 (at /usr/bin/clang)
-* C++ Compiler:   Version 13.1.6 (at /usr/bin/clang++)
+* Boot JDK:       openjdk version "21-ea" 2023-09-19 OpenJDK Runtime Environment (build 21-ea+7-472) OpenJDK 64-Bit Server VM (build 21-ea+7-472, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home)
+* Toolchain:      clang (clang/LLVM from Xcode 14.2)
+* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+* C Compiler:     Version 14.0.0 (at /usr/bin/clang)
+* C++ Compiler:   Version 14.0.0 (at /usr/bin/clang++)
 
 Build performance summary:
 * Build jobs:     12
@@ -160,10 +164,10 @@ make jdk.compiler
 
 ```shell
 % time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version
-openjdk version "20-internal" 2023-03-21
-OpenJDK Runtime Environment (slowdebug build 20-internal-adhoc.yakir.jdkbuild)
-OpenJDK 64-Bit Zero VM (slowdebug build 20-internal-adhoc.yakir.jdkbuild, interpreted mode)
-./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version  3.56s user 0.06s system 98% cpu 3.657 total
+openjdk version "21-internal" 2023-09-19
+OpenJDK Runtime Environment (slowdebug build 21-internal-adhoc.yakir.jdkbuild)
+OpenJDK 64-Bit Zero VM (slowdebug build 21-internal-adhoc.yakir.jdkbuild, interpreted mode)
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java -version  3.95s user 0.07s system 99% cpu 4.052 total
 ```
 
 ```shell
@@ -177,7 +181,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 17.0.3.1+2-LTS-6, mixed mode, sharing)
 ```shell
 % time ./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java 
 Hello World
-./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java  34.20s user 0.69s system 98% cpu 35.345 total
+./build/macosx-x86_64-zero-slowdebug/jdk/bin/java /Volumes/sm/Hello.java  34.09s user 0.78s system 107% cpu 32.567 total
 ```
 
 对比OpenJDK Java 17
@@ -191,7 +195,7 @@ Hello World
 // Hello.java
 public class Hello {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        System.out.println("Hello World");
     }
 }
 ```
@@ -200,7 +204,7 @@ public class Hello {
 
 ```shell
 cd src/utils/hsdis && 
-    make ARCH=amd64 BINUTILS=binutils-2.34 CFLAGS="-Wno-error=logical-not-parentheses -Wno-error=string-plus-int -fbracket-depth=512" && \
+    make ARCH=amd64 BINUTILS=binutils-2.37 CFLAGS="-Wno-error=logical-not-parentheses -Wno-error=string-plus-int -fbracket-depth=512" && \
     cp build/macosx-amd64/hsdis-amd64.dylib <JDK Home>/Contents/Home/lib/server/
 ```
 
@@ -209,7 +213,7 @@ cd src/utils/hsdis &&
 ## IdealGraphVisualizer
 
 
-## Clion 调试
+## Clion/IDEA 调试
 
 ```bash
 make compile-commands
