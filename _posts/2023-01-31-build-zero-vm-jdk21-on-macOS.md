@@ -46,7 +46,7 @@ cd libffi
 ```shell
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
-    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk//Contents/Home/ \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/ \
     --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin \
     --disable-warnings-as-errors \
     --with-boot-jdk-jvmargs="-XX:+UseG1GC -Xms8G -Xmx8G" \
@@ -67,7 +67,7 @@ sh ./configure --enable-dtrace \
 ```bash
 make clean ; make dist-clean;
 sh ./configure --enable-dtrace \
-    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk//Contents/Home/ \
+    --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/ \
     --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin \
     --disable-warnings-as-errors \
     --with-boot-jdk-jvmargs="-XX:+UseG1GC -Xms8G -Xmx8G" \
@@ -91,7 +91,7 @@ sh ./configure --enable-dtrace \
 ====================================================
 A new configuration has been successfully created in
 /Volumes/sm/github/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk//Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-hsdis=binutils --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.37 --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
 
 Configuration summary:
 * Name:           macosx-x86_64-zero-slowdebug
@@ -101,7 +101,7 @@ Configuration summary:
 * JVM features:   zero: 'cds dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero' 
 * OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
 * Version string: 21-internal-adhoc.yakir.jdkbuild (21-internal)
-* Source date:    1675148620 (2023-01-31T07:03:40Z)
+* Source date:    1675218641 (2023-02-01T02:30:41Z)
 
 Tools summary:
 * Boot JDK:       openjdk version "21-ea" 2023-09-19 OpenJDK Runtime Environment (build 21-ea+7-472) OpenJDK 64-Bit Server VM (build 21-ea+7-472, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home)
@@ -113,6 +113,9 @@ Tools summary:
 Build performance summary:
 * Build jobs:     12
 * Memory limit:   32768 MB
+
+The following warnings were produced. Repeated here for convenience:
+WARNING: pandoc is version 3.0.1, not the recommended version 2.19.2
 ```
 
 ## Server & Client Fastdebug `configure` 成功输出
@@ -221,14 +224,17 @@ make compile-commands-hotspot
 sh bin/idea.sh
 ```
 生成`compile_commands.json`文件, 位于`${SRC}/build/macosx-x86_64-zero-slowdebug/`目录中
+同一目录下创建`.lldbinit`文件,内容如下
+```lldb
+settings set target.load-cwd-lldbinit true
+br set -n main -o true -G true -C "pro hand -p true -s false SIGSEGV SIGBUS"
+```
 
-Clion `Open` `compile_commands.json`文件
-
-选择 `open as project`
-
+在`Clion`中 `Open` `compile_commands.json`文件，选择 `open as project`
 
 
 
 ## References
 
 [Tips & Tricks: Develop OpenJDK in CLion with Pleasure](https://blog.jetbrains.com/clion/2020/03/openjdk-with-clion/)
+[Jetbrains: Tips & Tricks: Develop OpenJDK in CLion with Pleasure](https://blog.jetbrains.com/clion/2020/03/openjdk-with-clion/)
