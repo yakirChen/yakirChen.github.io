@@ -52,7 +52,7 @@ xcode-select --install
 git clone --recursive --depth 1 git@github.com:Kitware/CMake.git CMake
 cd CMake && mkdir build && cd build && \
     ../bootstrap --parallel=12 --prefix=${CMAKE_HOME} && \
-    make -j4 && \
+    make -j12 && \
     make install
 
 # 验证
@@ -86,13 +86,14 @@ export BOOST_ROOT=/Volumes/sm/servers/boost
 ### 3. 构建`Squirrel`依赖
 
 ```bash
-make deps && make -j12 ARCHS='x86_64' # do not use make -jX when make deps 
+make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') deps
+make -j12 ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}')  # do not use make -jX when make deps 
 ```
 
 ### 4. 构建成功,安装`Squirrel`
 
 ```bash
-sudo make ARCHS='x86_64' install 
+sudo make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') install 
 ```
 
 ### 5. 東風破(plum)
