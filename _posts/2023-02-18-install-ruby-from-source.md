@@ -1,7 +1,7 @@
 ---
 
 title: Install Ruby From Source
-date: 2023/01/31
+date: 2023/02/18
 tags: [Ruby]
 
 ---
