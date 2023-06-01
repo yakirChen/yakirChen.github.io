@@ -19,6 +19,8 @@ description: Squirrel构建安装(macOS)
 
 ![rime_white_placeless.png](/imgs/squirrel-screenshot/rime_white_placeless.png)
 
+![rime_white_placeless.png](/imgs/squirrel-screenshot/yakir_white.png)
+
 ## 编译&安装
 
 ### 1. 获得`鼠鬚管`源码
