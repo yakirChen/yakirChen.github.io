@@ -66,14 +66,14 @@ cmake version 3.24.0
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-### OpenCC依赖 `Python 2`
+~~### OpenCC依赖 `Python 2`~~
 
-```bash
-./configure --prefix=${HOME}/local/python2 --enable-optimizations && \
-    make && make install
-```
+~~```bash~~
+~~./configure --prefix=${HOME}/local/python2 --enable-optimizations && \ ~~
+~~    make && make install~~
+~~```~~
 
-#### boost构建: 更新至`1.81.0`版本
+#### boost构建: 更新至`1.82.0`版本
 
 ```bash
 brew install icu4c

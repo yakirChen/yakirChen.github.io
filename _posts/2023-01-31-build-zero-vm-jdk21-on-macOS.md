@@ -10,14 +10,14 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 
 环境依赖:  
 
-1. [安装一个 JDK17](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+1. [安装一个 JDK21](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 2. [Autogen](http://www.gnu.org/software/autogen)
 3. [Autoconf](http://www.gnu.org/software/autoconf)
 4. [Python 2](https://www.python.org/)
 5. [Libffi](https://github.com/libffi/libffi)
 6. [Freetype](https://www.freetype.org)
 7. [Ccache](https://ccache.samba.org)
-8. [XCode Version 14.2 (14C18) macOS Version 12.6.3 (21G419)](https://developer.apple.com/download/more/)
+8. [XCode Version 14.3.1 (14E300c) macOS Version 13.4.1 (22F82)](https://developer.apple.com/download/more/)
 9. [Binutils](https://ftp.gnu.org/gnu/binutils/)
 
 [👉🏼 依赖安装](https://github.com/yakirChen/macOS-libs/blob/master/build.md)
@@ -98,24 +98,24 @@ Configuration summary:
 * Debug level:    slowdebug
 * HS debug level: debug
 * JVM variants:   zero
-* JVM features:   zero: 'cds dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero' 
+* JVM features:   zero: 'cds dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero'
 * OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
-* Version string: 21-internal-adhoc.yakir.jdkbuild (21-internal)
-* Source date:    1675218641 (2023-02-01T02:30:41Z)
+* Version string: 22-internal-adhoc.yakir.jdkbuild (22-internal)
+* Source date:    1688474086 (2023-07-04T12:34:46Z)
 
 Tools summary:
-* Boot JDK:       openjdk version "21-ea" 2023-09-19 OpenJDK Runtime Environment (build 21-ea+7-472) OpenJDK 64-Bit Server VM (build 21-ea+7-472, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home)
-* Toolchain:      clang (clang/LLVM from Xcode 14.2)
-* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
-* C Compiler:     Version 14.0.0 (at /usr/bin/clang)
-* C++ Compiler:   Version 14.0.0 (at /usr/bin/clang++)
+* Boot JDK:       openjdk version "21-ea" 2023-09-19 OpenJDK Runtime Environment (build 21-ea+29-2411) OpenJDK 64-Bit Server VM (build 21-ea+29-2411, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home)
+* Toolchain:      clang (clang/LLVM from Xcode 14.3.1)
+* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
+* C Compiler:     Version 14.0.3 (at /usr/bin/clang)
+* C++ Compiler:   Version 14.0.3 (at /usr/bin/clang++)
 
 Build performance summary:
 * Build jobs:     12
 * Memory limit:   32768 MB
 
 The following warnings were produced. Repeated here for convenience:
-WARNING: pandoc is version 3.0.1, not the recommended version 2.19.2
+WARNING: pandoc is version 3.1.4, not the recommended version 2.19.2
 ```
 
 ## Server & Client Fastdebug `configure` 成功输出
