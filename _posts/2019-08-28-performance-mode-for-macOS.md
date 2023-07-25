@@ -12,23 +12,13 @@ description: macOS 开启性能模式
 - [Turn on performance mode for macOS Server](https://support.apple.com/en-us/HT202528)
 - [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
 
-## 重置NVRAM
-
-Option + Command + P + R
-
-> 将 Mac 关机，然后开机并立即同时按住以下四个按键：Option、Command、P 和 R。您可以在大约 20 秒后松开这些按键，在此期间您的 Mac 可能看似在重新启动。
->  
-> 在会发出启动声的 Mac 电脑上，您可以在两次启动声之后松开这些按键。
->  
-> 在配有 Apple T2 安全芯片的 Mac 电脑上，您可以在 Apple 标志出现并再次消失后松开这些按键。
+## 开启高性能模式
 
 ```shell
 nvram boot-args
 ```
 
 boot-args NVRAM 变量。如果您看到 serverperfmode=1，则说明性能模式已开启
-
-开启高性能模式
 
 ```shell
 sudo nvram boot-args="serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)"
