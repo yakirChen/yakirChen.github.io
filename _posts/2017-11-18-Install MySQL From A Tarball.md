@@ -81,6 +81,10 @@ CREATE USER yakir IDENTIFIED WITH mysql_native_password BY 'qweasd';
 # 赋权
 GRANT ALL PRIVILEGES ON *.* TO 'yakir'@'%' ;
 FLUSH PRIVILEGES;
+
+# 开启远程访问
+update user set host='%' where user='root';
+FLUSH PRIVILEGES;
 ```
 
 ### 关闭MySQL服务
