@@ -83,6 +83,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'yakir'@'%' ;
 FLUSH PRIVILEGES;
 
 # 开启远程访问
+use mysql;
 update user set host='%' where user='root';
 FLUSH PRIVILEGES;
 ```
