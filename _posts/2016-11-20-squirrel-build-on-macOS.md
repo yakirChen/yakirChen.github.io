@@ -66,12 +66,12 @@ cmake version 3.24.0
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-~~### OpenCC依赖 `Python 2`~~
+### 编译OpenCC时高版本CMake依赖 `Python 2`
 
-~~```bash~~
-~~./configure --prefix=${HOME}/local/python2 --enable-optimizations && \ ~~
-~~    make && make install~~
-~~```~~
+```bash
+./configure --prefix=${HOME}/local/python2 --enable-optimizations && \ 
+    make && make install
+```
 
 #### boost构建: 更新至`1.82.0`版本
 

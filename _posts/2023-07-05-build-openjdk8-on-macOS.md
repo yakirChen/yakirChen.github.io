@@ -1,7 +1,7 @@
 ---
 
 title: Build OpenJDK 8 on macOS
-date: 2023/01/31
+date: 2023/07/05
 tags: [Java,JDK,OpenJDK,Hotspot]
 
 ---
