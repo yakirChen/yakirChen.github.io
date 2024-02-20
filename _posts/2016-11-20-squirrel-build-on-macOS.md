@@ -88,6 +88,8 @@ export BOOST_ROOT=/Volumes/sm/servers/boost
 ### 3. 构建`Squirrel`依赖
 
 ```bash
+export PYTHON_HOME=${HOME}/local/python2
+export PATH=${PYTHON_HOME}/bin:$PATH
 make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') deps
 make -j12 ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}')  # do not use make -jX when make deps 
 ```
