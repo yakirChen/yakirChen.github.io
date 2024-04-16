@@ -123,6 +123,23 @@ cd plum && \
 2. `CTRL-SHIFT-<数字>` 可切换输入法(简体、繁体)  
 3. `SHIFT-Fn-DELETE` 从词库中删除错误的词, 然后使用方向键选中词  
 
+
+```shell
+cd librime/plugins
+gcr git@github:lotem/librime-octagram.git
+gcr git@github.com:lotem/librime-octagram.git
+gcr git@github.com:rime/librime-predict.git
+make CMAKE_OSX_ARCHITECTURES=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') deps
+make CMAKE_OSX_ARCHITECTURES=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') 
+make CMAKE_OSX_ARCHITECTURES=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') install
+cd ..
+make copy-rime-binaries copy-opencc-data
+make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}')
+make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') archive
+make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') install
+```
+
+
 #### change-log
 
 - **2016/11/20--2017/1/3. 试用感觉良好.**
