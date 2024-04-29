@@ -136,7 +136,7 @@ cd ..
 make copy-rime-binaries copy-opencc-data
 make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}')
 make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') archive
-make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') install
+sudo make ARCHS=$(uname -m) MACOSX_DEPLOYMENT_TARGET=$(sw_vers | grep "ProductVersion" | awk '/ProductVersion:/ {print $2}') install
 ```
 
 
