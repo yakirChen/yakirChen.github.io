@@ -19,6 +19,7 @@ tags: [Java,JDK,OpenJDK,Zero VM,Hotspot]
 7. [Ccache](https://ccache.samba.org)
 8. [XCode Version 14.3.1 (14E300c) macOS Version 13.4.1 (22F82)](https://developer.apple.com/download/more/)
 9. [Binutils](https://ftp.gnu.org/gnu/binutils/)
+10. texinfo
 
 [👉🏼 依赖安装](https://github.com/yakirChen/macOS-libs/blob/master/build.md)
 
@@ -55,9 +56,9 @@ sh ./configure --enable-dtrace \
     --with-native-debug-symbols=internal \
     --with-jvm-variants=zero \
     --with-hsdis=binutils \
-    --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.37 \
+    --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.42 \
     --with-target-bits=64 \
-    --with-libffi=/Users/yakir/local/brew/opt/libffi \
+    --with-libffi=/opt/homebrew/brew/opt/libffi \
     --with-num-cores=12 \
     --with-jobs=12
 ```
@@ -90,32 +91,32 @@ sh ./configure --enable-dtrace \
 ```shell
 ====================================================
 A new configuration has been successfully created in
-/Volumes/sm/github/jdk/jdkbuild/build/macosx-x86_64-zero-slowdebug
-using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-hsdis=binutils --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.37 --with-target-bits=64 --with-libffi=/Users/yakir/local/brew/opt/libffi --with-num-cores=12 --with-jobs=12'.
+/Volumes/sm/github/jdk/jdkbuild/build/macosx-aarch64-zero-slowdebug
+using configure arguments '--enable-dtrace --with-boot-jdk=/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home/ --with-toolchain-path=/Applications/Xcode.app/Contents/Developer/usr/bin --disable-warnings-as-errors --with-boot-jdk-jvmargs='-XX:+UseG1GC -Xms8G -Xmx8G' --with-toolchain-type=clang --with-debug-level=slowdebug --with-native-debug-symbols=internal --with-jvm-variants=zero --with-hsdis=binutils --with-binutils-src=/Volumes/sm/github/jdk/jdkbuild/src/utils/hsdis/binutils-2.42 --with-target-bits=64 --with-libffi=/opt/homebrew/opt/libffi/ --with-num-cores=14 --with-jobs=14'.
 
 Configuration summary:
-* Name:           macosx-x86_64-zero-slowdebug
+* Name:           macosx-aarch64-zero-slowdebug
 * Debug level:    slowdebug
 * HS debug level: debug
 * JVM variants:   zero
 * JVM features:   zero: 'cds dtrace epsilongc g1gc jni-check jvmti management parallelgc serialgc services shenandoahgc vm-structs zero'
-* OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
-* Version string: 22-internal-adhoc.yakir.jdkbuild (22-internal)
-* Source date:    1688474086 (2023-07-04T12:34:46Z)
+* OpenJDK target: OS: macosx, CPU architecture: aarch64, address length: 64
+* Version string: 24-internal-adhoc.yakir.jdkbuild (24-internal)
+* Source date:    1719382331 (2024-06-26T06:12:11Z)
 
 Tools summary:
-* Boot JDK:       openjdk version "21-ea" 2023-09-19 OpenJDK Runtime Environment (build 21-ea+29-2411) OpenJDK 64-Bit Server VM (build 21-ea+29-2411, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home)
-* Toolchain:      clang (clang/LLVM from Xcode 14.3.1)
-* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
-* C Compiler:     Version 14.0.3 (at /usr/bin/clang)
-* C++ Compiler:   Version 14.0.3 (at /usr/bin/clang++)
+* Boot JDK:       java version "22.0.1" 2024-04-16 Java(TM) SE Runtime Environment (build 22.0.1+8-16) Java HotSpot(TM) 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing) (at /Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home)
+* Toolchain:      clang (clang/LLVM from Xcode 15.4)
+* Sysroot:        /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
+* C Compiler:     Version 15.0.0 (at /usr/bin/clang)
+* C++ Compiler:   Version 15.0.0 (at /usr/bin/clang++)
 
 Build performance summary:
-* Build jobs:     12
-* Memory limit:   32768 MB
+* Build jobs:     14
+* Memory limit:   36864 MB
 
 The following warnings were produced. Repeated here for convenience:
-WARNING: pandoc is version 3.1.4, not the recommended version 2.19.2
+WARNING: pandoc is version 3.2.1, not the recommended version 2.19.2
 ```
 
 ## Server & Client Fastdebug `configure` 成功输出
