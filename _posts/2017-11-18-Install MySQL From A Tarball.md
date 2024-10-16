@@ -69,10 +69,10 @@ mysql -uroot -p --socket=${MYSQL_COMMON_DIR}/mysql.sock
 # 输入之前从日志中获取的初始密码
 
 # 修改root默认密码
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'qweasd';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'qweasd';
 
 # 创建用户
-CREATE USER yakir IDENTIFIED WITH mysql_native_password BY 'qweasd';
+CREATE USER yakir IDENTIFIED WITH caching_sha2_password BY 'qweasd';
 # ALTER USER yakir IDENTIFIED WITH mysql_native_password BY 'qweasd';
 
 # 删除用户
